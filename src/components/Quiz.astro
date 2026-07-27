@@ -1,0 +1,175 @@
+---
+interface QuizQuestion {
+  type: "single";
+  text: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+  source?: string;
+}
+
+interface QuizData {
+  title: string;
+  draft?: boolean;
+  questions: QuizQuestion[];
+}
+
+interface Props {
+  slug: string;
+  quiz: QuizData;
+}
+
+const { slug, quiz } = Astro.props;
+const quizJson = JSON.stringify(quiz);
+---
+
+<section class="quiz" data-quiz data-slug={slug}>
+  {quiz.draft && <p class="notice">Это шаблон теста. Замените вопросы перед публикацией учебного раздела.</p>}
+  <script type="application/json" data-quiz-data set:html={quizJson}></script>
+  <form class="quiz-form">
+    {quiz.questions.map((question, questionIndex) => (
+      <fieldset class="quiz-question" data-question-index={questionIndex}>
+        <legend>
+          <span>Вопрос {questionIndex + 1}</span>
+          {question.text}
+        </legend>
+        <div class="quiz-options">
+          {question.options.map((option, optionIndex) => (
+            <label>
+              <input
+                type="radio"
+                name={`${slug}-${questionIndex}`}
+                value={optionIndex + 1}
+                required
+              />
+              <span>{option}</span>
+            </label>
+          ))}
+        </div>
+        <p class="quiz-feedback" data-question-feedback hidden></p>
+      </fieldset>
+    ))}
+    <div class="quiz-actions">
+      <button class="button" type="submit">Проверить</button>
+      <button class="button button--secondary" type="button" data-quiz-reset>Сбросить</button>
+    </div>
+  </form>
+  <div class="quiz-result" data-quiz-result hidden></div>
+</section>
+
+<script>
+  const quizResultsKey = "potee:quiz-results:v1";
+
+  function readResults() {
+    try {
+      return JSON.parse(localStorage.getItem(quizResultsKey) || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function writeResult(slug, result) {
+    const results = readResults();
+    results[slug] = result;
+    localStorage.setItem(quizResultsKey, JSON.stringify(results));
+    window.dispatchEvent(new CustomEvent("potee-progress-updated"));
+  }
+
+  function renderResult(root, quiz, result) {
+    const resultBox = root.querySelector("[data-quiz-result]");
+    const percent = result.total > 0 ? Math.round((result.score / result.total) * 100) : 0;
+    const missed = result.mistakes.length;
+
+    resultBox.hidden = false;
+    resultBox.innerHTML = `
+      <h3>${result.passed ? "Тест пройден" : "Тест требует повторения"}</h3>
+      <p>Результат: <strong>${result.score} из ${result.total}</strong> (${percent}%). Ошибок: ${missed}.</p>
+      ${
+        missed
+          ? `<ol>${result.mistakes
+              .map(
+                (mistake) => `<li>
+                  <strong>${mistake.text}</strong>
+                  <p>Правильный ответ: ${mistake.answerText}</p>
+                  <p>${mistake.explanation}</p>
+                  ${mistake.source ? `<p class="source">${mistake.source}</p>` : ""}
+                </li>`
+              )
+              .join("")}</ol>`
+          : "<p>Можно переходить к следующему разделу.</p>"
+      }
+    `;
+
+    quiz.questions.forEach((question, index) => {
+      const fieldset = root.querySelector(`[data-question-index="${index}"]`);
+      const feedback = fieldset.querySelector("[data-question-feedback]");
+      const selected = result.answers[index];
+      const isCorrect = selected === question.answer;
+      fieldset.dataset.state = isCorrect ? "correct" : "wrong";
+      feedback.hidden = false;
+      feedback.textContent = isCorrect
+        ? `Верно. ${question.explanation}`
+        : `Неверно. Правильный ответ: ${question.options[question.answer - 1]}. ${question.explanation}`;
+    });
+  }
+
+  function setupQuiz(root) {
+    if (root.dataset.ready === "true") return;
+    root.dataset.ready = "true";
+
+    const slug = root.dataset.slug;
+    const quiz = JSON.parse(root.querySelector("[data-quiz-data]").textContent);
+    const form = root.querySelector(".quiz-form");
+    const reset = root.querySelector("[data-quiz-reset]");
+    const saved = readResults()[slug];
+
+    if (saved) renderResult(root, quiz, saved);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const answers = quiz.questions.map((_, index) => {
+        const selected = form.querySelector(`input[name="${slug}-${index}"]:checked`);
+        return selected ? Number(selected.value) : null;
+      });
+
+      const mistakes = [];
+      const score = quiz.questions.reduce((total, question, index) => {
+        const isCorrect = answers[index] === question.answer;
+        if (!isCorrect) {
+          mistakes.push({
+            text: question.text,
+            answerText: question.options[question.answer - 1],
+            explanation: question.explanation,
+            source: question.source
+          });
+        }
+        return total + (isCorrect ? 1 : 0);
+      }, 0);
+
+      const result = {
+        score,
+        total: quiz.questions.length,
+        passed: quiz.questions.length > 0 && score / quiz.questions.length >= 0.8,
+        answers,
+        mistakes,
+        updatedAt: new Date().toISOString()
+      };
+
+      writeResult(slug, result);
+      renderResult(root, quiz, result);
+    });
+
+    reset.addEventListener("click", () => {
+      form.reset();
+      root.querySelectorAll(".quiz-question").forEach((question) => {
+        delete question.dataset.state;
+        const feedback = question.querySelector("[data-question-feedback]");
+        feedback.hidden = true;
+        feedback.textContent = "";
+      });
+      root.querySelector("[data-quiz-result]").hidden = true;
+    });
+  }
+
+  document.querySelectorAll("[data-quiz]").forEach(setupQuiz);
+</script>

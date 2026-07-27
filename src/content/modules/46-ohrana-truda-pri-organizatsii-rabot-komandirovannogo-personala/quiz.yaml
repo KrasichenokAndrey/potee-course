@@ -1,0 +1,13 @@
+title: "Проверка: XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА"
+moduleSlug: "46-ohrana-truda-pri-organizatsii-rabot-komandirovannogo-personala"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

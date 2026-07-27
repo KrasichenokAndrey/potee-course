@@ -1,0 +1,93 @@
+---
+interface Props {
+  slug: string;
+  draft?: boolean;
+}
+
+const { slug, draft = false } = Astro.props;
+---
+
+<section class="presentation-viewer" data-presentation-viewer data-slug={slug}>
+  <div class="presentation-toolbar" aria-label="Навигация по презентации">
+    <button class="icon-button" type="button" data-slide-prev aria-label="Предыдущий слайд">‹</button>
+    <span class="slide-counter" data-slide-counter>1 / 1</span>
+    <button class="icon-button" type="button" data-slide-next aria-label="Следующий слайд">›</button>
+  </div>
+  {draft && <p class="notice">Это шаблон презентации. Замените содержимое файлом из NotebookLM или чата.</p>}
+  <div class="presentation-stage" data-slide-stage></div>
+  <div class="presentation-source prose" data-presentation-source hidden>
+    <slot />
+  </div>
+</section>
+
+<script>
+  const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+  function assetUrl(path) {
+    return `${baseUrl}${path.startsWith("/") ? path : `/${path}`}`;
+  }
+
+  function setupPresentationViewer(viewer) {
+    if (viewer.dataset.ready === "true") return;
+    viewer.dataset.ready = "true";
+
+    const source = viewer.querySelector("[data-presentation-source]");
+    const stage = viewer.querySelector("[data-slide-stage]");
+    const counter = viewer.querySelector("[data-slide-counter]");
+    const prev = viewer.querySelector("[data-slide-prev]");
+    const next = viewer.querySelector("[data-slide-next]");
+    const children = Array.from(source.children);
+    const groups = [];
+    let current = [];
+
+    children.forEach((child) => {
+      if (child.tagName === "H2" && current.length > 0) {
+        groups.push(current);
+        current = [child];
+      } else {
+        current.push(child);
+      }
+    });
+
+    if (current.length > 0) groups.push(current);
+    if (groups.length === 0) groups.push(children);
+
+    const slides = groups.map((group, index) => {
+      const slide = document.createElement("article");
+      slide.className = "presentation-slide prose";
+      slide.dataset.slide = String(index);
+      group.forEach((node) => slide.appendChild(node.cloneNode(true)));
+      slide.querySelectorAll("img[data-slide-src]").forEach((image) => {
+        image.src = assetUrl(image.dataset.slideSrc);
+      });
+      if (slide.querySelector("img")) {
+        slide.classList.add("presentation-slide--image");
+      }
+      stage.appendChild(slide);
+      return slide;
+    });
+
+    let active = 0;
+
+    function show(index) {
+      active = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== active;
+      });
+      counter.textContent = `${active + 1} / ${slides.length}`;
+      prev.disabled = active === 0;
+      next.disabled = active === slides.length - 1;
+    }
+
+    prev.addEventListener("click", () => show(active - 1));
+    next.addEventListener("click", () => show(active + 1));
+    viewer.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") show(active - 1);
+      if (event.key === "ArrowRight") show(active + 1);
+    });
+
+    show(0);
+  }
+
+  document.querySelectorAll("[data-presentation-viewer]").forEach(setupPresentationViewer);
+</script>

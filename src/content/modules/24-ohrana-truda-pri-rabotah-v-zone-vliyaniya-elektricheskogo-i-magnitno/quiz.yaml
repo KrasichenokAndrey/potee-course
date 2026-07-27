@@ -1,0 +1,13 @@
+title: "Проверка: XXIV. ОХРАНА ТРУДА ПРИ РАБОТАХ В ЗОНЕ ВЛИЯНИЯ ЭЛЕКТРИЧЕСКОГО И МАГНИТНОГО ПОЛЕЙ"
+moduleSlug: "24-ohrana-truda-pri-rabotah-v-zone-vliyaniya-elektricheskogo-i-magnitno"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

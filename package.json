@@ -1,0 +1,21 @@
+{
+  "name": "potee-course",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "generate:content": "node scripts/generate-content.mjs",
+    "validate:content": "node scripts/validate-content.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "astro": "^5.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "yaml": "^2.8.0"
+  }
+}

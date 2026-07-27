@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ModuleCard from "../components/ModuleCard.astro";
+import { getCourseModules } from "../lib/course";
+import { withBase } from "../lib/url";
+
+const modules = await getCourseModules();
+const ruleModules = modules.filter((module) => module.data.kind === "rule");
+const appendixModules = modules.filter((module) => module.data.kind === "appendix");
+---
+
+<BaseLayout title="Курс ПОТЭЭ">
+  <section class="course-shell">
+    <div class="page-heading">
+      <p class="eyebrow">Учебный курс</p>
+      <h1>Правила по охране труда при эксплуатации электроустановок</h1>
+      <p>
+        Разделы собраны из исходных текстов. Для первых модулей подключены готовые презентации,
+        остальные уже имеют шаблоны под NotebookLM и тесты.
+      </p>
+    </div>
+
+    <div class="summary-grid" aria-label="Сводка курса">
+      <div>
+        <span>{ruleModules.length}</span>
+        <p>разделов</p>
+      </div>
+      <div>
+        <span>{appendixModules.length}</span>
+        <p>приложений</p>
+      </div>
+      <div>
+        <span data-completed-count>0</span>
+        <p>пройдено</p>
+      </div>
+    </div>
+
+    <section class="module-section" aria-labelledby="rules-title">
+      <div class="section-heading">
+        <h2 id="rules-title">Разделы правил</h2>
+        <a href={withBase("/progress/")}>Смотреть прогресс</a>
+      </div>
+      <div class="module-grid">
+        {ruleModules.map((module) => <ModuleCard module={module} />)}
+      </div>
+    </section>
+
+    <section class="module-section" aria-labelledby="appendix-title">
+      <div class="section-heading">
+        <h2 id="appendix-title">Приложения</h2>
+      </div>
+      <div class="module-grid">
+        {appendixModules.map((module) => <ModuleCard module={module} />)}
+      </div>
+    </section>
+  </section>
+</BaseLayout>
+
+<script>
+  function refreshCompletedCount() {
+    try {
+      const results = JSON.parse(localStorage.getItem("potee:quiz-results:v1") || "{}");
+      const completed = Object.values(results).filter((result) => result?.passed).length;
+      document.querySelectorAll("[data-completed-count]").forEach((node) => {
+        node.textContent = String(completed);
+      });
+    } catch {
+      document.querySelectorAll("[data-completed-count]").forEach((node) => {
+        node.textContent = "0";
+      });
+    }
+  }
+
+  refreshCompletedCount();
+  window.addEventListener("storage", refreshCompletedCount);
+  window.addEventListener("potee-progress-updated", refreshCompletedCount);
+</script>

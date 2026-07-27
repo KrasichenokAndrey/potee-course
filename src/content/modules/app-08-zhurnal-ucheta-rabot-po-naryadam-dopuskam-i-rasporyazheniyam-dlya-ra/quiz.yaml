@@ -1,0 +1,13 @@
+title: "Проверка: Приложение 8. ЖУРНАЛ УЧЕТА РАБОТ ПО НАРЯДАМ-ДОПУСКАМ И РАСПОРЯЖЕНИЯМ ДЛЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ"
+moduleSlug: "app-08-zhurnal-ucheta-rabot-po-naryadam-dopuskam-i-rasporyazheniyam-dlya-ra"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

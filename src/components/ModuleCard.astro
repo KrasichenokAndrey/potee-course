@@ -1,0 +1,27 @@
+---
+import type { CourseModule } from "../lib/course";
+import { getSlugFromEntryId } from "../lib/course";
+import { withBase } from "../lib/url";
+import ProgressBadge from "./ProgressBadge.astro";
+
+interface Props {
+  module: CourseModule;
+}
+
+const { module } = Astro.props;
+const slug = getSlugFromEntryId(module.id);
+const typeLabel = module.data.kind === "appendix" ? "Приложение" : "Раздел";
+const moduleUrl = withBase(`/modules/${slug}/`);
+---
+
+<article class="module-card">
+  <div class="module-card__meta">
+    <span>{typeLabel}</span>
+    <span>{module.data.number}</span>
+  </div>
+  <h2>{module.data.title}</h2>
+  <div class="module-card__footer">
+    <ProgressBadge slug={slug} />
+    <a class="button button--small" href={moduleUrl}>Открыть</a>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+title: "Проверка: XVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ОТКЛЮЧЕНИЙ В ЭЛЕКТРОУСТАНОВКАХ"
+moduleSlug: "17-ohrana-truda-pri-vypolnenii-otklyucheniy-v-elektroustanovkah"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

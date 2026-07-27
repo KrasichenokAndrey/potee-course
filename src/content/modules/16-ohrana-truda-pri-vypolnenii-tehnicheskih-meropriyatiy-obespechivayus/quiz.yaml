@@ -1,0 +1,13 @@
+title: "Проверка: XVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ТЕХНИЧЕСКИХ МЕРОПРИЯТИЙ, ОБЕСПЕЧИВАЮЩИХ БЕЗОПАСНОСТЬ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ"
+moduleSlug: "16-ohrana-truda-pri-vypolnenii-tehnicheskih-meropriyatiy-obespechivayus"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

@@ -1,0 +1,13 @@
+title: "Проверка: XLIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРИЧЕСКОЙ ЧАСТИ УСТРОЙСТВ ТЕПЛОВОЙ АВТОМАТИКИ, ТЕПЛОТЕХНИЧЕСКИХ ИЗМЕРЕНИЙ И ЗАЩИТ"
+moduleSlug: "43-ohrana-truda-pri-vypolnenii-rabot-v-elektricheskoy-chasti-ustroystv"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

@@ -1,0 +1,13 @@
+title: "Проверка: XXIII. ОГРАЖДЕНИЕ РАБОЧЕГО МЕСТА, ВЫВЕШИВАНИЕ ПЛАКАТОВ БЕЗОПАСНОСТИ"
+moduleSlug: "23-ograzhdenie-rabochego-mesta-vyveshivanie-plakatov-bezopasnosti"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

@@ -1,0 +1,145 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PresentationViewer from "../../components/PresentationViewer.astro";
+import ProgressBadge from "../../components/ProgressBadge.astro";
+import Quiz from "../../components/Quiz.astro";
+import { withBase } from "../../lib/url";
+import {
+  getCourseModules,
+  getModuleBySlug,
+  getPresentationBySlug,
+  getQuizBySlug,
+  getSlugFromEntryId
+} from "../../lib/course";
+
+export async function getStaticPaths() {
+  const modules = await getCourseModules();
+  return modules.map((module) => ({
+    params: { slug: getSlugFromEntryId(module.id) }
+  }));
+}
+
+const { slug } = Astro.params;
+const modules = await getCourseModules();
+const moduleEntry = await getModuleBySlug(slug);
+
+if (!moduleEntry) {
+  return Astro.redirect(withBase("/"));
+}
+
+const presentationEntry = await getPresentationBySlug(slug);
+const quizEntry = await getQuizBySlug(slug);
+const moduleIndex = modules.findIndex((module) => getSlugFromEntryId(module.id) === slug);
+const previousModule = moduleIndex > 0 ? modules[moduleIndex - 1] : null;
+const nextModule = moduleIndex >= 0 && moduleIndex < modules.length - 1 ? modules[moduleIndex + 1] : null;
+const { Content: ModuleContent } = await render(moduleEntry);
+const renderedPresentation = presentationEntry ? await render(presentationEntry) : null;
+const PresentationContent = renderedPresentation?.Content;
+---
+
+<BaseLayout title={`${moduleEntry.data.title} | Курс ПОТЭЭ`}>
+  <article class="module-page" data-module-page data-slug={slug}>
+    <header class="module-header">
+      <div>
+        <p class="eyebrow">{moduleEntry.data.kind === "appendix" ? "Приложение" : "Раздел"} {moduleEntry.data.number}</p>
+        <h1>{moduleEntry.data.title}</h1>
+      </div>
+      <ProgressBadge slug={slug} />
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Раздел курса">
+      <button type="button" role="tab" aria-selected="true" aria-controls="panel-material" data-tab="material">
+        Материал
+      </button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="panel-presentation" data-tab="presentation">
+        Презентация
+      </button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="panel-quiz" data-tab="quiz">
+        Тест
+      </button>
+    </div>
+
+    <section class="tab-panel" id="panel-material" role="tabpanel" data-panel="material">
+      <div class="panel-actions">
+        <button class="button button--secondary" type="button" data-mark-material>
+          Отметить материал изученным
+        </button>
+      </div>
+      <div class="prose">
+        <ModuleContent />
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-presentation" role="tabpanel" data-panel="presentation" hidden>
+      {PresentationContent ? (
+        <PresentationViewer slug={slug} draft={presentationEntry.data.draft}>
+          <PresentationContent />
+        </PresentationViewer>
+      ) : (
+        <p class="notice">Презентация еще не добавлена.</p>
+      )}
+    </section>
+
+    <section class="tab-panel" id="panel-quiz" role="tabpanel" data-panel="quiz" hidden>
+      {quizEntry ? <Quiz slug={slug} quiz={quizEntry.data} /> : <p class="notice">Тест еще не добавлен.</p>}
+    </section>
+
+    <nav class="module-nav" aria-label="Переход между разделами">
+      {previousModule ? (
+        <a href={withBase(`/modules/${getSlugFromEntryId(previousModule.id)}/`)}>← {previousModule.data.number}</a>
+      ) : (
+        <span></span>
+      )}
+      {nextModule ? (
+        <a href={withBase(`/modules/${getSlugFromEntryId(nextModule.id)}/`)}>{nextModule.data.number} →</a>
+      ) : (
+        <span></span>
+      )}
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  function readStudyProgress() {
+    try {
+      return JSON.parse(localStorage.getItem("potee:study-progress:v1") || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function writeStudyProgress(slug, patch) {
+    const progress = readStudyProgress();
+    progress[slug] = { ...(progress[slug] || {}), ...patch, updatedAt: new Date().toISOString() };
+    localStorage.setItem("potee:study-progress:v1", JSON.stringify(progress));
+    window.dispatchEvent(new CustomEvent("potee-progress-updated"));
+  }
+
+  document.querySelectorAll("[data-module-page]").forEach((page) => {
+    const slug = page.dataset.slug;
+    const tabs = Array.from(page.querySelectorAll("[data-tab]"));
+    const panels = Array.from(page.querySelectorAll("[data-panel]"));
+
+    function activate(tabName) {
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.tab === tabName;
+        tab.setAttribute("aria-selected", String(selected));
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.panel !== tabName;
+      });
+      history.replaceState(null, "", `#${tabName}`);
+    }
+
+    tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab.dataset.tab)));
+
+    const initial = location.hash.replace("#", "");
+    if (["material", "presentation", "quiz"].includes(initial)) activate(initial);
+
+    page.querySelector("[data-mark-material]")?.addEventListener("click", (event) => {
+      writeStudyProgress(slug, { materialRead: true });
+      event.currentTarget.textContent = "Материал отмечен";
+    });
+  });
+</script>

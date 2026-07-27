@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+import { withBase } from "../lib/url";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Курс по охране труда при эксплуатации электроустановок",
+  description = "Статический учебный курс по Правилам по охране труда при эксплуатации электроустановок."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={withBase("/")}>ПОТЭЭ</a>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <a href={withBase("/")}>Курс</a>
+        <a href={withBase("/progress/")}>Прогресс</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

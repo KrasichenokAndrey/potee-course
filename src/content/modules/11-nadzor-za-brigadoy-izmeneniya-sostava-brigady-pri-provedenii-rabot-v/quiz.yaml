@@ -1,0 +1,13 @@
+title: "Проверка: XI. НАДЗОР ЗА БРИГАДОЙ. ИЗМЕНЕНИЯ СОСТАВА БРИГАДЫ ПРИ ПРОВЕДЕНИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ"
+moduleSlug: "11-nadzor-za-brigadoy-izmeneniya-sostava-brigady-pri-provedenii-rabot-v"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

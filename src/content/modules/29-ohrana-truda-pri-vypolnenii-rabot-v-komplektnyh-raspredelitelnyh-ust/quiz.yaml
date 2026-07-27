@@ -1,0 +1,13 @@
+title: "Проверка: XXIX. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В КОМПЛЕКТНЫХ РАСПРЕДЕЛИТЕЛЬНЫХ УСТРОЙСТВАХ"
+moduleSlug: "29-ohrana-truda-pri-vypolnenii-rabot-v-komplektnyh-raspredelitelnyh-ust"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

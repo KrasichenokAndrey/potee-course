@@ -1,0 +1,13 @@
+title: "Проверка: XV. ОХРАНА ТРУДА ПРИ ВКЛЮЧЕНИИ ЭЛЕКТРОУСТАНОВОК ПОСЛЕ ПОЛНОГО ОКОНЧАНИЯ РАБОТ"
+moduleSlug: "15-ohrana-truda-pri-vklyuchenii-elektroustanovok-posle-polnogo-okonchan"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."

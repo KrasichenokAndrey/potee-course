@@ -1,0 +1,54 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<span class="progress-badge" data-progress-badge data-slug={slug}>Не начато</span>
+
+<script>
+  const quizStorageKey = "potee:quiz-results:v1";
+  const studyStorageKey = "potee:study-progress:v1";
+
+  function readStore(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function labelFor(slug) {
+    const quiz = readStore(quizStorageKey)[slug];
+    const study = readStore(studyStorageKey)[slug];
+
+    if (quiz?.passed) {
+      return { text: `Пройден: ${quiz.score}/${quiz.total}`, state: "done" };
+    }
+
+    if (quiz) {
+      return { text: `Тест: ${quiz.score}/${quiz.total}`, state: "attempted" };
+    }
+
+    if (study?.materialRead) {
+      return { text: "Материал изучен", state: "reading" };
+    }
+
+    return { text: "Не начато", state: "empty" };
+  }
+
+  function refreshProgressBadges() {
+    document.querySelectorAll("[data-progress-badge]").forEach((badge) => {
+      const slug = badge.dataset.slug;
+      const next = labelFor(slug);
+      badge.textContent = next.text;
+      badge.dataset.state = next.state;
+    });
+  }
+
+  refreshProgressBadges();
+  window.addEventListener("storage", refreshProgressBadges);
+  window.addEventListener("potee-progress-updated", refreshProgressBadges);
+</script>

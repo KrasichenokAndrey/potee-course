@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProgressBadge from "../components/ProgressBadge.astro";
+import { getCourseModules, getSlugFromEntryId } from "../lib/course";
+import { withBase } from "../lib/url";
+
+const modules = await getCourseModules();
+---
+
+<BaseLayout title="Прогресс | Курс ПОТЭЭ">
+  <section class="course-shell">
+    <div class="page-heading">
+      <p class="eyebrow">Локальный прогресс</p>
+      <h1>Карта прохождения</h1>
+      <p>Данные сохраняются только в браузере на этом устройстве.</p>
+    </div>
+
+    <div class="progress-summary" data-progress-summary>
+      <span>0</span>
+      <p>модулей пройдено</p>
+    </div>
+
+    <div class="progress-table" role="table" aria-label="Прогресс по модулям">
+      <div class="progress-row progress-row--head" role="row">
+        <span role="columnheader">Модуль</span>
+        <span role="columnheader">Статус</span>
+        <span role="columnheader">Результат</span>
+      </div>
+      {modules.map((module) => {
+        const slug = getSlugFromEntryId(module.id);
+        return (
+          <div class="progress-row" role="row" data-progress-row data-slug={slug}>
+            <a role="cell" href={withBase(`/modules/${slug}/`)}>{module.data.number}. {module.data.title}</a>
+            <span role="cell"><ProgressBadge slug={slug} /></span>
+            <span role="cell" data-progress-detail>Нет попыток</span>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function refreshProgressPage() {
+    let results = {};
+    try {
+      results = JSON.parse(localStorage.getItem("potee:quiz-results:v1") || "{}");
+    } catch {
+      results = {};
+    }
+
+    let completed = 0;
+    document.querySelectorAll("[data-progress-row]").forEach((row) => {
+      const result = results[row.dataset.slug];
+      const detail = row.querySelector("[data-progress-detail]");
+
+      if (!result) {
+        detail.textContent = "Нет попыток";
+        return;
+      }
+
+      if (result.passed) completed += 1;
+      const percent = result.total > 0 ? Math.round((result.score / result.total) * 100) : 0;
+      detail.textContent = `${result.score}/${result.total}, ${percent}%`;
+    });
+
+    document.querySelector("[data-progress-summary] span").textContent = String(completed);
+  }
+
+  refreshProgressPage();
+  window.addEventListener("storage", refreshProgressPage);
+  window.addEventListener("potee-progress-updated", refreshProgressPage);
+</script>

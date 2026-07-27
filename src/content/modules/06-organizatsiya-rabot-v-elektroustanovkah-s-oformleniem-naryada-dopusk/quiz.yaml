@@ -1,0 +1,13 @@
+title: "Проверка: VI. ОРГАНИЗАЦИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ С ОФОРМЛЕНИЕМ НАРЯДА-ДОПУСКА"
+moduleSlug: "06-organizatsiya-rabot-v-elektroustanovkah-s-oformleniem-naryada-dopusk"
+draft: true
+questions:
+  - type: single
+    text: "Замените этот вопрос проверочным вопросом по модулю."
+    options:
+      - "Вариант 1"
+      - "Вариант 2"
+      - "Вариант 3"
+    answer: 1
+    explanation: "Добавьте пояснение с отсылкой к конкретному пункту Правил."
+    source: "Пункт ..."
