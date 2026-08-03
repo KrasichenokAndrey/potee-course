@@ -10,6 +10,7 @@ if (!fs.existsSync(modulesDir)) {
 }
 
 const errors = [];
+const rulePointPattern = /^\d+\.\d+\./;
 const moduleDirs = fs
   .readdirSync(modulesDir, { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
@@ -24,6 +25,20 @@ for (const dir of moduleDirs) {
   }
 
   const quizPath = path.join(dir, "quiz.yaml");
+  const modulePath = path.join(dir, "module.md");
+
+  if (fs.existsSync(modulePath)) {
+    const moduleLines = fs.readFileSync(modulePath, "utf8").replace(/\r\n/g, "\n").split("\n");
+    moduleLines.forEach((line, index) => {
+      if (!rulePointPattern.test(line.trim()) || index === 0) return;
+
+      const previousLine = moduleLines[index - 1]?.trim();
+      if (previousLine !== "") {
+        errors.push(`${rel}: rule point on line ${index + 1} must start after a blank line`);
+      }
+    });
+  }
+
   if (!fs.existsSync(quizPath)) continue;
 
   const quiz = YAML.parse(fs.readFileSync(quizPath, "utf8"));

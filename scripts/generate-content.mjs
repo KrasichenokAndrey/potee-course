@@ -155,6 +155,32 @@ function sourceBodyFor(file, title) {
   return body.trim();
 }
 
+function startsRulePoint(line) {
+  return /^\d+\.\d+\./.test(line.trim());
+}
+
+function formatRuleBody(value) {
+  const formatted = [];
+  const lines = value.replace(/\r\n/g, "\n").split("\n");
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      if (formatted.at(-1) !== "") formatted.push("");
+      continue;
+    }
+
+    if (startsRulePoint(trimmed) && formatted.length > 0 && formatted.at(-1) !== "") {
+      formatted.push("");
+    }
+
+    formatted.push(line.trimEnd());
+  }
+
+  return formatted.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
 function frontmatter(fields) {
   const lines = Object.entries(fields).map(([key, value]) => {
     if (typeof value === "number" || typeof value === "boolean") return `${key}: ${value}`;
@@ -166,7 +192,7 @@ function frontmatter(fields) {
 function writeModule(entry) {
   const dir = path.join(modulesDir, entry.slug);
   ensureDir(dir);
-  const body = sourceBodyFor(entry.file, entry.title);
+  const body = formatRuleBody(sourceBodyFor(entry.file, entry.title));
   const content =
     frontmatter({
       title: entry.title,
