@@ -40,6 +40,21 @@ const PresentationContent = renderedPresentation?.Content;
 
 <BaseLayout title={`${moduleEntry.data.title} | Курс ПОТЭЭ`}>
   <article class="module-page" data-module-page data-slug={slug}>
+    <nav class="module-nav" aria-label="Переход между разделами">
+      {previousModule && (
+        <a class="module-nav__link module-nav__link--previous" href={withBase(`/modules/${getSlugFromEntryId(previousModule.id)}/`)}>
+          <span class="module-nav__label">Предыдущий раздел</span>
+          <span class="module-nav__title">← {previousModule.data.title}</span>
+        </a>
+      )}
+      {nextModule && (
+        <a class="module-nav__link module-nav__link--next" href={withBase(`/modules/${getSlugFromEntryId(nextModule.id)}/`)}>
+          <span class="module-nav__label">Следующий раздел</span>
+          <span class="module-nav__title">{nextModule.data.title} →</span>
+        </a>
+      )}
+    </nav>
+
     <header class="module-header">
       <div>
         <p class="eyebrow">{moduleEntry.data.kind === "appendix" ? "Приложение" : "Раздел"} {moduleEntry.data.number}</p>
@@ -85,18 +100,6 @@ const PresentationContent = renderedPresentation?.Content;
       {quizEntry ? <Quiz slug={slug} quiz={quizEntry.data} /> : <p class="notice">Тест еще не добавлен.</p>}
     </section>
 
-    <nav class="module-nav" aria-label="Переход между разделами">
-      {previousModule ? (
-        <a href={withBase(`/modules/${getSlugFromEntryId(previousModule.id)}/`)}>← {previousModule.data.number}</a>
-      ) : (
-        <span></span>
-      )}
-      {nextModule ? (
-        <a href={withBase(`/modules/${getSlugFromEntryId(nextModule.id)}/`)}>{nextModule.data.number} →</a>
-      ) : (
-        <span></span>
-      )}
-    </nav>
   </article>
 </BaseLayout>
 

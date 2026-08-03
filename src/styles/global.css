@@ -519,18 +519,47 @@ input {
 
 .module-nav {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 18px;
+  margin: 0 0 18px;
 }
 
-.module-nav a {
-  min-height: 42px;
-  padding: 10px 14px;
+.module-nav__link {
+  display: flex;
+  min-height: 58px;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
+  color: var(--text);
   font-weight: 750;
+}
+
+.module-nav__link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.module-nav__link--next {
+  align-items: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.module-nav__label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.module-nav__title {
+  line-height: 1.3;
 }
 
 .progress-summary {
@@ -593,6 +622,17 @@ input {
   .module-nav {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .module-nav__link {
+    width: 100%;
+    flex: 0 1 auto;
+  }
+
+  .module-nav__link--next {
+    align-items: flex-start;
+    margin-left: 0;
+    text-align: left;
   }
 
   .tab-panel {
