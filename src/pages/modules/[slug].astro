@@ -63,40 +63,75 @@ const PresentationContent = renderedPresentation?.Content;
       <ProgressBadge slug={slug} />
     </header>
 
-    <div class="tabs" role="tablist" aria-label="Раздел курса">
-      <button type="button" role="tab" aria-selected="true" aria-controls="panel-material" data-tab="material">
-        Материал
+    <div class="tabs tabs--primary" role="tablist" aria-label="Раздел курса">
+      <button type="button" role="tab" aria-selected="true" aria-controls="panel-materials" data-main-tab="materials">
+        Материалы
       </button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="panel-presentation" data-tab="presentation">
-        Презентация
-      </button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="panel-quiz" data-tab="quiz">
-        Тест
+      <button type="button" role="tab" aria-selected="false" aria-controls="panel-testing" data-main-tab="testing">
+        Тестирование
       </button>
     </div>
 
-    <section class="tab-panel" id="panel-material" role="tabpanel" data-panel="material">
-      <div class="panel-actions">
-        <button class="button button--secondary" type="button" data-mark-material>
-          Отметить материал изученным
+    <section class="tab-panel" id="panel-materials" role="tabpanel" data-main-panel="materials">
+      <div class="tabs tabs--nested" role="tablist" aria-label="Материалы раздела">
+        <button type="button" role="tab" aria-selected="true" aria-controls="panel-materials-rules" data-material-tab="materials-rules">
+          Правила
+        </button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-simple" data-material-tab="materials-simple">
+          Простыми словами
+        </button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-presentation" data-material-tab="materials-presentation">
+          Презентация
+        </button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-podcast" data-material-tab="materials-podcast">
+          Подкаст
+        </button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-story" data-material-tab="materials-story">
+          Рассказ
         </button>
       </div>
-      <div class="prose">
-        <ModuleContent />
-      </div>
+
+      <section class="nested-tab-panel" id="panel-materials-rules" role="tabpanel" data-material-panel="materials-rules">
+        <div class="panel-actions">
+          <button class="button button--secondary" type="button" data-mark-material>
+            Отметить материал изученным
+          </button>
+        </div>
+        <div class="prose">
+          <ModuleContent />
+        </div>
+      </section>
+
+      <section class="nested-tab-panel" id="panel-materials-simple" role="tabpanel" data-material-panel="materials-simple" hidden>
+        <div class="empty-state">
+          <p>Мы еще формулируем описание.</p>
+        </div>
+      </section>
+
+      <section class="nested-tab-panel" id="panel-materials-presentation" role="tabpanel" data-material-panel="materials-presentation" hidden>
+        {PresentationContent ? (
+          <PresentationViewer slug={slug} draft={presentationEntry.data.draft}>
+            <PresentationContent />
+          </PresentationViewer>
+        ) : (
+          <p class="notice">Презентация еще не добавлена.</p>
+        )}
+      </section>
+
+      <section class="nested-tab-panel" id="panel-materials-podcast" role="tabpanel" data-material-panel="materials-podcast" hidden>
+        <div class="empty-state">
+          <p>Подкаст для этого раздела еще не добавлен.</p>
+        </div>
+      </section>
+
+      <section class="nested-tab-panel" id="panel-materials-story" role="tabpanel" data-material-panel="materials-story" hidden>
+        <div class="empty-state">
+          <p>Рассказ еще пишется</p>
+        </div>
+      </section>
     </section>
 
-    <section class="tab-panel" id="panel-presentation" role="tabpanel" data-panel="presentation" hidden>
-      {PresentationContent ? (
-        <PresentationViewer slug={slug} draft={presentationEntry.data.draft}>
-          <PresentationContent />
-        </PresentationViewer>
-      ) : (
-        <p class="notice">Презентация еще не добавлена.</p>
-      )}
-    </section>
-
-    <section class="tab-panel" id="panel-quiz" role="tabpanel" data-panel="quiz" hidden>
+    <section class="tab-panel" id="panel-testing" role="tabpanel" data-main-panel="testing" hidden>
       {quizEntry ? <Quiz slug={slug} quiz={quizEntry.data} /> : <p class="notice">Тест еще не добавлен.</p>}
     </section>
 
@@ -121,24 +156,78 @@ const PresentationContent = renderedPresentation?.Content;
 
   document.querySelectorAll("[data-module-page]").forEach((page) => {
     const slug = page.dataset.slug;
-    const tabs = Array.from(page.querySelectorAll("[data-tab]"));
-    const panels = Array.from(page.querySelectorAll("[data-panel]"));
+    const mainTabs = Array.from(page.querySelectorAll("[data-main-tab]"));
+    const mainPanels = Array.from(page.querySelectorAll("[data-main-panel]"));
+    const materialTabs = Array.from(page.querySelectorAll("[data-material-tab]"));
+    const materialPanels = Array.from(page.querySelectorAll("[data-material-panel]"));
+    const materialTabNames = [
+      "materials-rules",
+      "materials-simple",
+      "materials-presentation",
+      "materials-podcast",
+      "materials-story"
+    ];
+    const legacyHashes = {
+      material: "materials-rules",
+      presentation: "materials-presentation",
+      quiz: "testing"
+    };
 
-    function activate(tabName) {
-      tabs.forEach((tab) => {
-        const selected = tab.dataset.tab === tabName;
+    function activateMain(tabName) {
+      mainTabs.forEach((tab) => {
+        const selected = tab.dataset.mainTab === tabName;
         tab.setAttribute("aria-selected", String(selected));
       });
-      panels.forEach((panel) => {
-        panel.hidden = panel.dataset.panel !== tabName;
+      mainPanels.forEach((panel) => {
+        panel.hidden = panel.dataset.mainPanel !== tabName;
       });
-      history.replaceState(null, "", `#${tabName}`);
     }
 
-    tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab.dataset.tab)));
+    function activateMaterial(tabName) {
+      materialTabs.forEach((tab) => {
+        const selected = tab.dataset.materialTab === tabName;
+        tab.setAttribute("aria-selected", String(selected));
+      });
+      materialPanels.forEach((panel) => {
+        panel.hidden = panel.dataset.materialPanel !== tabName;
+      });
+    }
+
+    function activate(sectionName, updateHash = true) {
+      const normalizedSection = legacyHashes[sectionName] || sectionName;
+
+      if (normalizedSection === "testing") {
+        activateMain("testing");
+      } else if (materialTabNames.includes(normalizedSection)) {
+        activateMain("materials");
+        activateMaterial(normalizedSection);
+      } else {
+        return;
+      }
+
+      if (updateHash && location.hash !== `#${normalizedSection}`) {
+        history.replaceState(null, "", `#${normalizedSection}`);
+      }
+    }
+
+    mainTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        if (tab.dataset.mainTab === "testing") {
+          activate("testing");
+          return;
+        }
+
+        const activeMaterialTab = materialTabs.find((item) => item.getAttribute("aria-selected") === "true");
+        activate(activeMaterialTab?.dataset.materialTab || "materials-rules");
+      });
+    });
+
+    materialTabs.forEach((tab) => {
+      tab.addEventListener("click", () => activate(tab.dataset.materialTab));
+    });
 
     const initial = location.hash.replace("#", "");
-    if (["material", "presentation", "quiz"].includes(initial)) activate(initial);
+    if (initial) activate(initial, Boolean(legacyHashes[initial]));
 
     page.querySelector("[data-mark-material]")?.addEventListener("click", (event) => {
       writeStudyProgress(slug, { materialRead: true });

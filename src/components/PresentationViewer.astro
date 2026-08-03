@@ -13,7 +13,7 @@ const { slug, draft = false } = Astro.props;
     <span class="slide-counter" data-slide-counter>1 / 1</span>
     <button class="icon-button" type="button" data-slide-next aria-label="Следующий слайд">›</button>
   </div>
-  {draft && <p class="notice">Это шаблон презентации. Замените содержимое файлом из NotebookLM или чата.</p>}
+  {draft && <p class="notice">Презентация в разработке</p>}
   <div class="presentation-stage" data-slide-stage></div>
   <div class="presentation-source prose" data-presentation-source hidden>
     <slot />
