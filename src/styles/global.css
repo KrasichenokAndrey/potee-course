@@ -67,8 +67,15 @@ input {
 
 .top-nav {
   display: flex;
-  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
   font-size: 0.95rem;
+}
+
+.top-nav__button {
+  white-space: nowrap;
 }
 
 .course-shell,
@@ -647,7 +654,18 @@ input {
 
 @media (max-width: 720px) {
   .site-header {
+    gap: 12px;
     padding: 0 16px;
+  }
+
+  .top-nav {
+    gap: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .top-nav__button {
+    min-height: 34px;
+    padding: 0 10px;
   }
 
   .course-shell,
