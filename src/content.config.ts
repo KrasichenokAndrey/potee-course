@@ -48,4 +48,9 @@ const stories = defineCollection({
   schema: z.object({})
 });
 
-export const collections = { modules, presentations, quizzes, stories };
+const simple = defineCollection({
+  loader: glob({ base: "./public/simple", pattern: "*.md" }),
+  schema: z.object({})
+});
+
+export const collections = { modules, presentations, quizzes, stories, simple };

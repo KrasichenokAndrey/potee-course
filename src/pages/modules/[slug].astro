@@ -11,6 +11,7 @@ import {
   getModuleBySlug,
   getPresentationBySlug,
   getQuizBySlug,
+  getSimpleBySlug,
   getStoryBySlug,
   getSlugFromEntryId
 } from "../../lib/course";
@@ -32,6 +33,7 @@ if (!moduleEntry) {
 
 const presentationEntry = await getPresentationBySlug(slug);
 const quizEntry = await getQuizBySlug(slug);
+const simpleEntry = moduleEntry.data.kind === "rule" && slug ? await getSimpleBySlug(slug) : null;
 const storyInfo = getStoryInfo(slug);
 const storyEntry = storyInfo && slug ? await getStoryBySlug(slug) : null;
 const moduleIndex = modules.findIndex((module) => getSlugFromEntryId(module.id) === slug);
@@ -40,6 +42,8 @@ const nextModule = moduleIndex >= 0 && moduleIndex < modules.length - 1 ? module
 const { Content: ModuleContent } = await render(moduleEntry);
 const renderedPresentation = presentationEntry ? await render(presentationEntry) : null;
 const PresentationContent = renderedPresentation?.Content;
+const renderedSimple = simpleEntry ? await render(simpleEntry) : null;
+const SimpleContent = renderedSimple?.Content;
 const renderedStory = storyEntry ? await render(storyEntry) : null;
 const StoryContent = renderedStory?.Content;
 ---
@@ -103,15 +107,21 @@ const StoryContent = renderedStory?.Content;
             Отметить материал изученным
           </button>
         </div>
-        <div class="prose">
+        <div class="prose prose--rules">
           <ModuleContent />
         </div>
       </section>
 
       <section class="nested-tab-panel" id="panel-materials-simple" role="tabpanel" data-material-panel="materials-simple" hidden>
-        <div class="empty-state">
-          <p>Мы еще формулируем описание.</p>
-        </div>
+        {SimpleContent ? (
+          <div class="prose prose--simple">
+            <SimpleContent />
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>Материал простыми словами для этого раздела еще не добавлен.</p>
+          </div>
+        )}
       </section>
 
       <section class="nested-tab-panel" id="panel-materials-presentation" role="tabpanel" data-material-panel="materials-presentation" hidden>

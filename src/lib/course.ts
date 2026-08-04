@@ -5,6 +5,7 @@ export type CourseModule = CollectionEntry<"modules">;
 export type CoursePresentation = CollectionEntry<"presentations">;
 export type CourseQuiz = CollectionEntry<"quizzes">;
 export type CourseStory = CollectionEntry<"stories">;
+export type CourseSimple = CollectionEntry<"simple">;
 
 export function getSlugFromEntryId(id: string) {
   return id.split("/")[0];
@@ -29,4 +30,8 @@ export async function getQuizBySlug(slug: string) {
 
 export async function getStoryBySlug(slug: string) {
   return getEntry("stories", slug);
+}
+
+export async function getSimpleBySlug(slug: string) {
+  return getEntry("simple", slug);
 }

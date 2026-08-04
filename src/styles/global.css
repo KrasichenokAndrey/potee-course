@@ -377,6 +377,29 @@ input {
   margin-top: 0;
 }
 
+.prose--rules {
+  overflow-wrap: anywhere;
+}
+
+.prose--rules p,
+.prose--rules li {
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.prose--simple {
+  max-width: 900px;
+  overflow-wrap: anywhere;
+}
+
+.prose--simple p,
+.prose--simple li {
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
 .prose--story {
   max-width: 900px;
   overflow-wrap: anywhere;
