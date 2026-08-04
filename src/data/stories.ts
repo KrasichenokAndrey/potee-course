@@ -1,0 +1,68 @@
+export const storySourcesByModuleSlug = {
+  "01-obschie-polozheniya": "Рассказ по I. ОБЩИЕ ПОЛОЖЕНИЯ.md",
+  "02-trebovaniya-k-rabotnikam-dopuskaemym-k-vypolneniyu-rabot-v-elektrous": "Рассказ по II. ТРЕБОВАНИЯ К РАБОТНИКАМ, ДОПУСКАЕМЫМ К ВЫПОЛНЕНИЮ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "03-ohrana-truda-pri-osmotrah-operativnom-obsluzhivanii-i-tehnologichesk": "Рассказ по III. ОХРАНА ТРУДА ПРИ ОСМОТРАХ, ОПЕРАТИВНОМ ОБСЛУЖИВАНИИ И ТЕХНОЛОГИЧЕСКОМ УПРАВЛЕНИИ ЭЛЕКТРОУСТАНОВОК.md",
+  "04-ohrana-truda-pri-proizvodstve-rabot-v-deystvuyuschih-elektroustanovk": "Рассказ по IV. ОХРАНА ТРУДА ПРИ ПРОИЗВОДСТВЕ РАБОТ В ДЕЙСТВУЮЩИХ ЭЛЕКТРОУСТАНОВКАХ.md",
+  "05-organizatsionnye-meropriyatiya-po-obespecheniyu-bezopasnogo-proveden": "Рассказ по V. ОРГАНИЗАЦИОННЫЕ МЕРОПРИЯТИЯ ПО ОБЕСПЕЧЕНИЮ БЕЗОПАСНОГО ПРОВЕДЕНИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "06-organizatsiya-rabot-v-elektroustanovkah-s-oformleniem-naryada-dopusk": "Рассказ по VI. ОРГАНИЗАЦИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ С ОФОРМЛЕНИЕМ НАРЯДА-ДОПУСКА.md",
+  "07-organizatsiya-rabot-v-elektroustanovkah-po-rasporyazheniyu": "Рассказ по VII. ОРГАНИЗАЦИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ ПО РАСПОРЯЖЕНИЮ.md",
+  "08-ohrana-truda-pri-organizatsii-rabot-v-elektroustanovkah-vypolnyaemyh": "Рассказ по VIII. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ, ВЫПОЛНЯЕМЫХ ПО ПЕРЕЧНЮ РАБОТ В ПОРЯДКЕ ТЕКУЩЕЙ ЭКСПЛУАТАЦИИ.md",
+  "09-ohrana-truda-pri-vydache-razresheniy-na-podgotovku-rabochego-mesta-i": "Рассказ по IX. ОХРАНА ТРУДА ПРИ ВЫДАЧЕ РАЗРЕШЕНИЙ НА ПОДГОТОВКУ РАБОЧЕГО МЕСТА И ДОПУСК К РАБОТЕ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "10-ohrana-truda-pri-podgotovke-rabochego-mesta-i-pervichnom-dopuske-bri": "Рассказ по X. ОХРАНА ТРУДА ПРИ ПОДГОТОВКЕ РАБОЧЕГО МЕСТА И ПЕРВИЧНОМ ДОПУСКЕ БРИГАДЫ К РАБОТЕ В ЭЛЕКТРОУСТАНОВКАХ ПО НАРЯДУ-ДОПУСКУ И РА 1aa03c.md",
+  "11-nadzor-za-brigadoy-izmeneniya-sostava-brigady-pri-provedenii-rabot-v": "Рассказ по XI. НАДЗОР ЗА БРИГАДОЙ. ИЗМЕНЕНИЯ СОСТАВА БРИГАДЫ ПРИ ПРОВЕДЕНИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "12-perevod-na-drugoe-rabochee-mesto": "Рассказ по XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО.md",
+  "13-oformlenie-pereryvov-v-rabote-i-povtornyh-dopuskov-k-rabote-v-elektr": "Рассказ по XIII. ОФОРМЛЕНИЕ ПЕРЕРЫВОВ В РАБОТЕ И ПОВТОРНЫХ ДОПУСКОВ К РАБОТЕ В ЭЛЕКТРОУСТАНОВКЕ.md",
+  "14-sdacha-priemka-rabochego-mesta-zakrytie-naryada-dopuska-rasporyazhen": "Рассказ по XIV. СДАЧА-ПРИЕМКА РАБОЧЕГО МЕСТА, ЗАКРЫТИЕ НАРЯДА-ДОПУСКА, РАСПОРЯЖЕНИЯ ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "15-ohrana-truda-pri-vklyuchenii-elektroustanovok-posle-polnogo-okonchan": "Рассказ по XV. ОХРАНА ТРУДА ПРИ ВКЛЮЧЕНИИ ЭЛЕКТРОУСТАНОВОК ПОСЛЕ ПОЛНОГО ОКОНЧАНИЯ РАБОТ.md",
+  "16-ohrana-truda-pri-vypolnenii-tehnicheskih-meropriyatiy-obespechivayus": "Рассказ по XVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ТЕХНИЧЕСКИХ МЕРОПРИЯТИЙ, ОБЕСПЕЧИВАЮЩИХ БЕЗОПАСНОСТЬ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "17-ohrana-truda-pri-vypolnenii-otklyucheniy-v-elektroustanovkah": "Рассказ по XVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ОТКЛЮЧЕНИЙ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "18-vyveshivanie-zapreschayuschih-plakatov": "Рассказ по XVIII. ВЫВЕШИВАНИЕ ЗАПРЕЩАЮЩИХ ПЛАКАТОВ.md",
+  "19-ohrana-truda-pri-proverke-otsutstviya-napryazheniya": "Рассказ по XIX. ОХРАНА ТРУДА ПРИ ПРОВЕРКЕ ОТСУТСТВИЯ НАПРЯЖЕНИЯ.md",
+  "20-ohrana-truda-pri-ustanovke-zazemleniy": "Рассказ по XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ.md",
+  "21-ohrana-truda-pri-ustanovke-zazemleniy-v-raspredelitelnyh-ustroystvah": "Рассказ по XXI. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ В РАСПРЕДЕЛИТЕЛЬНЫХ УСТРОЙСТВАХ.md",
+  "22-ohrana-truda-pri-ustanovke-zazemleniy-na-vl": "Рассказ по XXII. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ НА ВЛ.md",
+  "23-ograzhdenie-rabochego-mesta-vyveshivanie-plakatov-bezopasnosti": "Рассказ по XXIII. ОГРАЖДЕНИЕ РАБОЧЕГО МЕСТА, ВЫВЕШИВАНИЕ ПЛАКАТОВ БЕЗОПАСНОСТИ.md",
+  "24-ohrana-truda-pri-rabotah-v-zone-vliyaniya-elektricheskogo-i-magnitno": "Рассказ по XXIV. ОХРАНА ТРУДА ПРИ РАБОТАХ В ЗОНЕ ВЛИЯНИЯ ЭЛЕКТРИЧЕСКОГО И МАГНИТНОГО ПОЛЕЙ.md",
+  "25-ohrana-truda-pri-vypolnenii-rabot-na-generatorah-i-sinhronnyh-kompen": "Рассказ по XXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ГЕНЕРАТОРАХ И СИНХРОННЫХ КОМПЕНСАТОРАХ.md",
+  "26-ohrana-truda-pri-vypolnenii-rabot-v-elektroliznyh-ustanovkah": "Рассказ по XXVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРОЛИЗНЫХ УСТАНОВКАХ.md",
+  "27-ohrana-truda-pri-vypolnenii-rabot-na-elektrodvigatelyah": "Рассказ по XXVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ЭЛЕКТРОДВИГАТЕЛЯХ.md",
+  "28-ohrana-truda-pri-vypolnenii-rabot-na-kommutatsionnyh-apparatah": "Рассказ по XXVIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КОММУТАЦИОННЫХ АППАРАТАХ.md",
+  "29-ohrana-truda-pri-vypolnenii-rabot-v-komplektnyh-raspredelitelnyh-ust": "Рассказ по XXIX. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В КОМПЛЕКТНЫХ РАСПРЕДЕЛИТЕЛЬНЫХ УСТРОЙСТВАХ.md",
+  "30-ohrana-truda-pri-vypolnenii-rabot-na-machtovyh-stolbovyh-transformat": "Рассказ по XXX. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА МАЧТОВЫХ (СТОЛБОВЫХ) ТРАНСФОРМАТОРНЫХ ПОДСТАНЦИЯХ И КОМПЛЕКТНЫХ ТРАНСФОРМАТОРНЫХ ПОДСТАНЦИЯХ.md",
+  "31-ohrana-truda-pri-vypolnenii-rabot-na-silovyh-transformatorah-maslyan": "Рассказ по XXXI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА СИЛОВЫХ ТРАНСФОРМАТОРАХ, МАСЛЯНЫХ ШУНТИРУЮЩИХ И ДУГОГАСЯЩИХ РЕАКТОРАХ.md",
+  "32-ohrana-truda-pri-vypolnenii-rabot-na-izmeritelnyh-transformatorah-to": "Рассказ по XXXII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ИЗМЕРИТЕЛЬНЫХ ТРАНСФОРМАТОРАХ ТОКА.md",
+  "33-ohrana-truda-pri-vypolnenii-rabot-na-elektricheskih-kotlah": "Рассказ по XXXIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ЭЛЕКТРИЧЕСКИХ КОТЛАХ.md",
+  "34-ohrana-truda-pri-rabotah-na-elektrofiltrah": "Рассказ по XXXIV. ОХРАНА ТРУДА ПРИ РАБОТАХ НА ЭЛЕКТРОФИЛЬТРАХ.md",
+  "35-ohrana-truda-pri-vypolnenii-rabot-s-akkumulyatornymi-batareyami": "Рассказ по XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ.md",
+  "36-ohrana-truda-pri-vypolnenii-rabot-na-kondensatornyh-ustanovkah": "Рассказ по XXXVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КОНДЕНСАТОРНЫХ УСТАНОВКАХ.md",
+  "37-ohrana-truda-pri-vypolnenii-rabot-na-kabelnyh-liniyah": "Рассказ по XXXVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КАБЕЛЬНЫХ ЛИНИЯХ.md",
+  "38-ohrana-truda-pri-vypolnenii-rabot-na-vozdushnyh-liniyah-elektropered": "Рассказ по XXXVIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ВОЗДУШНЫХ ЛИНИЯХ ЭЛЕКТРОПЕРЕДАЧИ.md",
+  "39-ohrana-truda-pri-provedenii-ispytaniy-i-izmereniy-ispytaniya-elektro": "Рассказ по XXXIX. ОХРАНА ТРУДА ПРИ ПРОВЕДЕНИИ ИСПЫТАНИЙ И ИЗМЕРЕНИЙ. ИСПЫТАНИЯ ЭЛЕКТРООБОРУДОВАНИЯ С ПОДАЧЕЙ ПОВЫШЕННОГО НАПРЯЖЕНИЯ ОТ П 2ccb93.md",
+  "40-ohrana-truda-pri-obmyve-i-chistke-izolyatorov-pod-napryazheniem": "Рассказ по XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ.md",
+  "41-ohrana-truda-pri-vypolnenii-rabot-so-sredstvami-svyazi-dispetchersko": "Рассказ по XLI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ СО СРЕДСТВАМИ СВЯЗИ, ДИСПЕТЧЕРСКОГО И ТЕХНОЛОГИЧЕСКОГО УПРАВЛЕНИЯ.md",
+  "42-ohrana-truda-pri-vypolnenii-rabot-v-ustroystvah-releynoy-zaschity-i": "Рассказ по XLII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В УСТРОЙСТВАХ РЕЛЕЙНОЙ ЗАЩИТЫ И ЭЛЕКТРОАВТОМАТИКИ, СО СРЕДСТВАМИ ИЗМЕРЕНИЙ И ПРИБОРАМ 5bada9.md",
+  "43-ohrana-truda-pri-vypolnenii-rabot-v-elektricheskoy-chasti-ustroystv": "Рассказ по XLIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРИЧЕСКОЙ ЧАСТИ УСТРОЙСТВ ТЕПЛОВОЙ АВТОМАТИКИ, ТЕПЛОТЕХНИЧЕСКИХ ИЗМЕРЕНИЙ И ЗАЩИТ.md",
+  "44-ohrana-truda-pri-rabote-s-perenosnym-elektroinstrumentom-i-svetilnik": "Рассказ по XLIV. ОХРАНА ТРУДА ПРИ РАБОТЕ С ПЕРЕНОСНЫМ ЭЛЕКТРОИНСТРУМЕНТОМ И СВЕТИЛЬНИКАМИ, РУЧНЫМИ ЭЛЕКТРИЧЕСКИМИ МАШИНАМИ, РАЗДЕЛИТЕЛЬН a6fdc3.md",
+  "45-ohrana-truda-pri-vypolnenii-rabot-v-elektroustanovkah-s-primeneniem": "Рассказ по XLV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ С ПРИМЕНЕНИЕМ АВТОМОБИЛЕЙ, ПОДЪЕМНЫХ СООРУЖЕНИЙ И МЕХАНИЗМОВ, ЛЕСТНИЦ.md",
+  "46-ohrana-truda-pri-organizatsii-rabot-komandirovannogo-personala": "Рассказ по XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА.md",
+  "47-ohrana-truda-pri-dopuske-personala-stroitelno-montazhnyh-organizatsi": "Рассказ по XLVII. ОХРАНА ТРУДА ПРИ ДОПУСКЕ ПЕРСОНАЛА СТРОИТЕЛЬНО-МОНТАЖНЫХ ОРГАНИЗАЦИЙ К РАБОТАМ В ДЕЙСТВУЮЩИХ ЭЛЕКТРОУСТАНОВКАХ И В ОХР 44d60c.md",
+  "app-01-gruppy-po-elektrobezopasnosti-elektrotehnicheskogo-elektrotehnologic": "Рассказ по Приложение 1 ГРУППЫ ПО ЭЛЕКТРОБЕЗОПАСНОСТИ ЭЛЕКТРОТЕХНИЧЕСКОГО (ЭЛЕКТРОТЕХНОЛОГИЧЕСКОГО) ПЕРСОНАЛА И УСЛОВИЯ ИХ ПРИСВОЕНИЯ.md",
+  "app-02-udostoverenie-o-proverke-znaniy-pravil-raboty-v-elektroustanovkah": "Рассказ по Приложение 2 УДОСТОВЕРЕНИЕ О ПРОВЕРКЕ ЗНАНИЙ ПРАВИЛ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "app-03-udostoverenie-o-proverke-znaniy-pravil-rabotnikami-kontroliruyuschim": "Рассказ по Приложение 3 УДОСТОВЕРЕНИЕ О ПРОВЕРКЕ ЗНАНИЙ ПРАВИЛ РАБОТНИКАМИ, КОНТРОЛИРУЮЩИМИ ЭЛЕКТРОУСТАНОВКИ.md",
+  "app-04-protokol-n-proverki-znaniy-pravil-raboty-v-elektroustanovkah": "Рассказ по Приложение 4 ПРОТОКОЛ N_____ ПРОВЕРКИ ЗНАНИЙ ПРАВИЛ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "app-05-zhurnal-ucheta-proverki-znaniy-pravil-raboty-v-elektroustanovkah-dly": "Рассказ по Приложение 5 ЖУРНАЛ УЧЕТА ПРОВЕРКИ ЗНАНИЙ ПРАВИЛ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ ДЛЯ ОРГАНИЗАЦИЙ ЭЛЕКТРОЭНЕРГЕТИКИ.md",
+  "app-06-zhurnal-ucheta-proverki-znaniy-pravil-raboty-v-elektroustanovkah": "Рассказ по Приложение 6 ЖУРНАЛ УЧЕТА ПРОВЕРКИ ЗНАНИЙ ПРАВИЛ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ.md",
+  "app-07-naryad-dopusk-dlya-raboty-v-elektroustanovkah-i-ukazaniya-po-ego-zap": "Рассказ по Приложение 7 НАРЯД-ДОПУСК ДЛЯ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ И УКАЗАНИЯ ПО ЕГО ЗАПОЛНЕНИЮ.md",
+  "app-08-zhurnal-ucheta-rabot-po-naryadam-dopuskam-i-rasporyazheniyam-dlya-ra": "Рассказ по Приложение 8 ЖУРНАЛ УЧЕТА РАБОТ ПО НАРЯДАМ-ДОПУСКАМ И РАСПОРЯЖЕНИЯМ ДЛЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+} as const;
+
+export type StoryModuleSlug = keyof typeof storySourcesByModuleSlug;
+
+export function getStoryInfo(slug: string | undefined) {
+  if (!slug || !(slug in storySourcesByModuleSlug)) return null;
+
+  return {
+    sourceFile: storySourcesByModuleSlug[slug as StoryModuleSlug],
+    publicPath: `/stories/${slug}.md`
+  };
+}

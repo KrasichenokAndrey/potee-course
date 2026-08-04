@@ -4,12 +4,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PresentationViewer from "../../components/PresentationViewer.astro";
 import ProgressBadge from "../../components/ProgressBadge.astro";
 import Quiz from "../../components/Quiz.astro";
+import { getStoryInfo } from "../../data/stories";
 import { withBase } from "../../lib/url";
 import {
   getCourseModules,
   getModuleBySlug,
   getPresentationBySlug,
   getQuizBySlug,
+  getStoryBySlug,
   getSlugFromEntryId
 } from "../../lib/course";
 
@@ -30,12 +32,16 @@ if (!moduleEntry) {
 
 const presentationEntry = await getPresentationBySlug(slug);
 const quizEntry = await getQuizBySlug(slug);
+const storyInfo = getStoryInfo(slug);
+const storyEntry = storyInfo && slug ? await getStoryBySlug(slug) : null;
 const moduleIndex = modules.findIndex((module) => getSlugFromEntryId(module.id) === slug);
 const previousModule = moduleIndex > 0 ? modules[moduleIndex - 1] : null;
 const nextModule = moduleIndex >= 0 && moduleIndex < modules.length - 1 ? modules[moduleIndex + 1] : null;
 const { Content: ModuleContent } = await render(moduleEntry);
 const renderedPresentation = presentationEntry ? await render(presentationEntry) : null;
 const PresentationContent = renderedPresentation?.Content;
+const renderedStory = storyEntry ? await render(storyEntry) : null;
+const StoryContent = renderedStory?.Content;
 ---
 
 <BaseLayout title={`${moduleEntry.data.title} | Курс ПОТЭЭ`}>
@@ -125,9 +131,15 @@ const PresentationContent = renderedPresentation?.Content;
       </section>
 
       <section class="nested-tab-panel" id="panel-materials-story" role="tabpanel" data-material-panel="materials-story" hidden>
-        <div class="empty-state">
-          <p>Рассказ еще пишется</p>
-        </div>
+        {StoryContent ? (
+          <div class="prose prose--story">
+            <StoryContent />
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>Рассказ для этого раздела еще не добавлен.</p>
+          </div>
+        )}
       </section>
     </section>
 

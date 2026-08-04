@@ -43,4 +43,9 @@ const quizzes = defineCollection({
   })
 });
 
-export const collections = { modules, presentations, quizzes };
+const stories = defineCollection({
+  loader: glob({ base: "./public/stories", pattern: "*.md" }),
+  schema: z.object({})
+});
+
+export const collections = { modules, presentations, quizzes, stories };

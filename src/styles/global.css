@@ -377,6 +377,18 @@ input {
   margin-top: 0;
 }
 
+.prose--story {
+  max-width: 900px;
+  overflow-wrap: anywhere;
+}
+
+.prose--story p,
+.prose--story li {
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
 .prose table {
   display: block;
   width: 100%;
