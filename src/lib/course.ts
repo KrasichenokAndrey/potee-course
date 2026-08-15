@@ -29,9 +29,9 @@ export async function getQuizBySlug(slug: string) {
 }
 
 export async function getStoryBySlug(slug: string) {
-  return getEntry("stories", slug);
+  return getEntry("stories", `${slug}/story`);
 }
 
 export async function getSimpleBySlug(slug: string) {
-  return getEntry("simple", slug);
+  return getEntry("simple", `${slug}/simple`);
 }

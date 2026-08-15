@@ -44,12 +44,12 @@ const quizzes = defineCollection({
 });
 
 const stories = defineCollection({
-  loader: glob({ base: "./public/stories", pattern: "*.md" }),
+  loader: glob({ base: "./src/content/modules", pattern: "**/story.md" }),
   schema: z.object({})
 });
 
 const simple = defineCollection({
-  loader: glob({ base: "./public/simple", pattern: "*.md" }),
+  loader: glob({ base: "./src/content/modules", pattern: "**/simple.md" }),
   schema: z.object({})
 });
 
