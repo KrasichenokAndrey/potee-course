@@ -74,22 +74,37 @@ export function extractQuiz(raw, label) {
   return { yaml, quiz: YAML.parse(yaml) };
 }
 
+export function workingCopyName(file, module) {
+  // Linux limits each filename to 255 bytes, including multibyte Cyrillic text.
+  if (Buffer.byteLength(file, "utf8") <= 255) return file;
+  const number = module.kind === "rule" ? module.number : `Приложение ${module.number}`;
+  return `${number}. tests.md`;
+}
+
 // Build and validate the entire plan before the caller writes any copies or quizzes.
 export function planImport(root, directory) {
   const modules = readModules(root);
   const seen = new Set();
   const files = fs.readdirSync(directory, { withFileTypes: true });
   const isWorkingDirectory = path.resolve(directory) === path.resolve(root, "source/tests");
+  const manifestPath = path.join(directory, "manifest.json");
+  const recordedFiles = isWorkingDirectory && fs.existsSync(manifestPath)
+    ? JSON.parse(fs.readFileSync(manifestPath, "utf8")).files : [];
   const entries = files.filter((file) => !isWorkingDirectory || file.name !== "manifest.json").map((file) => {
     if (!file.isFile() || !file.name.toLowerCase().endsWith(".md")) throw new Error(`${file.name}: unmapped test source (expected Markdown file)`);
     const module = matchModule(file.name, modules);
+    const originalFile = isWorkingDirectory
+      ? recordedFiles.find((entry) => entry.file === file.name)?.originalFile ?? file.name : file.name;
+    if (matchModule(originalFile, modules).slug !== module.slug) throw new Error(`${file.name}: originalFile refers to another module`);
+    const workingFile = workingCopyName(originalFile, module);
+    if (isWorkingDirectory && file.name !== workingFile) throw new Error(`${file.name}: working copy must be named ${workingFile} for Linux compatibility`);
     if (seen.has(module.slug)) throw new Error(`${file.name}: duplicate test for ${module.slug}`);
     seen.add(module.slug);
     const raw = fs.readFileSync(path.join(directory, file.name));
     const { yaml, quiz } = extractQuiz(raw, file.name);
     const errors = validateQuiz(quiz, module.slug);
     if (errors.length) throw new Error(`${file.name}:\n${errors.join("\n")}`);
-    return { file: file.name, raw, yaml, quiz, module, sha256: createHash("sha256").update(raw).digest("hex") };
+    return { file: workingFile, originalFile, raw, yaml, quiz, module, sha256: createHash("sha256").update(raw).digest("hex") };
   }).sort((a, b) => a.module.order - b.module.order);
   if (!entries.length) throw new Error(`${directory}: no test sources found`);
   return entries;
@@ -97,8 +112,8 @@ export function planImport(root, directory) {
 
 export function importManifest(entries) {
   return {
-    format: 1,
-    files: entries.map(({ file, module, quiz, sha256 }) => ({ file, moduleSlug: module.slug, questions: quiz.questions.length, sha256 }))
+    format: 2,
+    files: entries.map(({ file, originalFile, module, quiz, sha256 }) => ({ file, originalFile, moduleSlug: module.slug, questions: quiz.questions.length, sha256 }))
   };
 }
 

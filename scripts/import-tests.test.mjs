@@ -6,13 +6,21 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import YAML from "yaml";
-import { validateQuiz, matchModule, extractQuiz, planImport, checkImportedTests } from "./lib/tests.mjs";
+import { validateQuiz, matchModule, extractQuiz, planImport, checkImportedTests, workingCopyName } from "./lib/tests.mjs";
 
 const example = () => ({ title: "Тест", moduleSlug: "01-test", draft: false, questions: [
   { type: "single", text: "Вопрос?", options: ["Первый", "Второй"], answer: 2 }
 ] });
 const modules = [{ kind: "rule", number: "I", slug: "01-test" }, { kind: "appendix", number: "1", slug: "app-01-test" }];
 const markdown = (quiz) => `# Тест\r\n\r\n\`\`\`yaml\r\n${YAML.stringify(quiz).replaceAll("\n", "\r\n")}\`\`\`\r\n`;
+
+test("working filenames fit the Linux byte limit and retain section numbers", () => {
+  const file = `I. ${"Я".repeat(140)}.md`;
+  assert.ok(file.length < 255 && Buffer.byteLength(file, "utf8") > 255);
+  assert.equal(workingCopyName(file, modules[0]), "I. tests.md");
+  assert.equal(workingCopyName(`Приложение 1 ${"Я".repeat(140)}.md`, modules[1]), "Приложение 1. tests.md");
+  assert.equal(workingCopyName("I. ТЕСТ.md", modules[0]), "I. ТЕСТ.md");
+});
 
 test("optional explanations and sources are not invented", () => {
   assert.deepEqual(validateQuiz(example(), "01-test"), []);
@@ -105,6 +113,31 @@ test("bad sources prevent all copies and replacements", (t) => {
   assert.equal(run("--copy-from-originals").status, 1);
   assert.equal(fs.existsSync(path.join(root, "source/tests")), false);
   assert.deepEqual(fs.readFileSync(target), before);
+});
+
+test("short working names preserve original provenance without the original folder", (t) => {
+  const { root, run } = fixture(t);
+  assert.equal(run("--copy-from-originals").status, 0);
+  const isolated = path.join(root, "checkout");
+  fs.mkdirSync(isolated);
+  fs.cpSync(path.join(root, "source"), path.join(isolated, "source"), { recursive: true });
+  fs.cpSync(path.join(root, "src"), path.join(isolated, "src"), { recursive: true });
+  const directory = path.join(isolated, "source/tests");
+  const manifestPath = path.join(directory, "manifest.json");
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  const entry = manifest.files[0];
+  const from = path.resolve(directory, entry.file);
+  const to = path.resolve(directory, "I. tests.md");
+  assert.equal(path.dirname(from), directory);
+  assert.equal(path.dirname(to), directory);
+  fs.renameSync(from, to);
+  entry.file = "I. tests.md";
+  entry.originalFile = `I. ${"Я".repeat(140)}.md`;
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest));
+  assert.deepEqual(checkImportedTests(isolated), []);
+  entry.originalFile = `Приложение 1 ${"Я".repeat(140)}.md`;
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest));
+  assert.match(checkImportedTests(isolated).join("\n"), /originalFile refers to another module/);
 });
 
 test("duplicate and non-Markdown sources stop the plan", (t) => {
