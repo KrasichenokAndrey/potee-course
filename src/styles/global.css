@@ -531,13 +531,46 @@ input {
   gap: 18px;
 }
 
-.quiz-form,
+.quiz-session,
 .quiz-options {
   display: grid;
   gap: 14px;
 }
 
+.quiz-session[hidden] {
+  display: none;
+}
+
+.quiz-instruction {
+  margin: 0;
+  color: var(--muted);
+}
+
+.quiz-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.quiz-progress-bar {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--accent);
+}
+
+.quiz [tabindex="-1"] {
+  scroll-margin-top: 90px;
+}
+
+.quiz .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .quiz-question {
+  min-width: 0;
   margin: 0;
   padding: 18px;
   border: 1px solid var(--line);
@@ -567,23 +600,55 @@ input {
   text-transform: uppercase;
 }
 
-.quiz-options label {
+.quiz-option {
   display: grid;
-  grid-template-columns: 22px minmax(0, 1fr);
+  grid-template-columns: 28px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
-.quiz-options input {
-  width: 18px;
-  height: 18px;
-  margin-top: 4px;
-  accent-color: var(--accent);
+.quiz-option:hover:not(:disabled),
+.quiz-option:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option[data-state="correct"] {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.quiz-option[data-state="wrong"] {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.quiz-option-number {
+  font-weight: 750;
+  color: var(--muted);
 }
 
 .quiz-feedback {
   margin: 14px 0 0;
   color: var(--text);
+}
+
+.quiz-feedback p {
+  margin: 8px 0 0;
 }
 
 .quiz-actions {
@@ -603,9 +668,15 @@ input {
   margin: 0 0 8px;
 }
 
-.quiz-result .source {
+.quiz-result .source,
+.quiz-feedback .source {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.quiz-result summary {
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .module-nav {

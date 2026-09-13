@@ -1,0 +1,2 @@
+# Preserve byte-for-byte test copies and their SHA-256 across Windows/Linux checkouts.
+source/tests/*.md -text

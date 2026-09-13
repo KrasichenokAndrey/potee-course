@@ -9,19 +9,20 @@ const { slug } = Astro.props;
 <span class="progress-badge" data-progress-badge data-slug={slug}>Не начато</span>
 
 <script>
-  const quizStorageKey = "potee:quiz-results:v1";
+  import { quizResultsKey } from "../lib/quiz-storage";
   const studyStorageKey = "potee:study-progress:v1";
 
   function readStore(key) {
     try {
-      return JSON.parse(localStorage.getItem(key) || "{}");
+      const store = JSON.parse(localStorage.getItem(key) || "{}");
+      return store && typeof store === "object" && !Array.isArray(store) ? store : {};
     } catch {
       return {};
     }
   }
 
   function labelFor(slug) {
-    const quiz = readStore(quizStorageKey)[slug];
+    const quiz = readStore(quizResultsKey)[slug];
     const study = readStore(studyStorageKey)[slug];
 
     if (quiz?.passed) {

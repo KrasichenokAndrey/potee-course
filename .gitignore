@@ -6,6 +6,7 @@ astro-dev*.log
 .env
 .env.*
 !.env.example
-source/
+/source/*
+!/source/tests/
 Исходники/
 *.pdf

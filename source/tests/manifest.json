@@ -1,0 +1,287 @@
+{
+  "format": 1,
+  "files": [
+    {
+      "file": "I. ОБЩИЕ ПОЛОЖЕНИЯ.md",
+      "moduleSlug": "01-obschie-polozheniya",
+      "questions": 16,
+      "sha256": "43db94777c581ecae9cc75e5647c71dc85e989fdf66e497a45dad95ed908eeb8"
+    },
+    {
+      "file": "II. ТРЕБОВАНИЯ К РАБОТНИКАМ, ДОПУСКАЕМЫМ К ВЫПОЛНЕНИЮ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "02-trebovaniya-k-rabotnikam-dopuskaemym-k-vypolneniyu-rabot-v-elektrous",
+      "questions": 43,
+      "sha256": "c8463525b26c6e24c1aa52386a600bc8ca3a76405f928e6354cc7c13a25efc50"
+    },
+    {
+      "file": "III. ОХРАНА ТРУДА ПРИ ОСМОТРАХ, ОПЕРАТИВНОМ ОБСЛУЖИВАНИИ И ТЕХНОЛОГИЧЕСКОМ УПРАВЛЕНИИ ЭЛЕКТРОУСТАНОВОК.md",
+      "moduleSlug": "03-ohrana-truda-pri-osmotrah-operativnom-obsluzhivanii-i-tehnologichesk",
+      "questions": 40,
+      "sha256": "2b26ad327b2a406ac9cfc384367325c384c58ee14036c6095dc5ae90254f60fe"
+    },
+    {
+      "file": "IV. ОХРАНА ТРУДА ПРИ ПРОИЗВОДСТВЕ РАБОТ В ДЕЙСТВУЮЩИХ ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "04-ohrana-truda-pri-proizvodstve-rabot-v-deystvuyuschih-elektroustanovk",
+      "questions": 39,
+      "sha256": "19fef5917ae09ce9a186d7e5e6612095e5e2d3bc493c3942d68a1ab18ebe3e75"
+    },
+    {
+      "file": "V. ОРГАНИЗАЦИОННЫЕ МЕРОПРИЯТИЯ ПО ОБЕСПЕЧЕНИЮ БЕЗОПАСНОГО ПРОВЕДЕНИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "05-organizatsionnye-meropriyatiya-po-obespecheniyu-bezopasnogo-proveden",
+      "questions": 50,
+      "sha256": "4079a9bdb213120734191fb7a87245ebfece92acaf8a2e1aa028976ca156efef"
+    },
+    {
+      "file": "VI. ОРГАНИЗАЦИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ С ОФОРМЛЕНИЕМ НАРЯДА-ДОПУСКА.md",
+      "moduleSlug": "06-organizatsiya-rabot-v-elektroustanovkah-s-oformleniem-naryada-dopusk",
+      "questions": 77,
+      "sha256": "5da335d2256e4fc1e268cc9175b170479dab1137b098774632239da5d4e17b8c"
+    },
+    {
+      "file": "VII. ОРГАНИЗАЦИЯ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ ПО РАСПОРЯЖЕНИЮ.md",
+      "moduleSlug": "07-organizatsiya-rabot-v-elektroustanovkah-po-rasporyazheniyu",
+      "questions": 36,
+      "sha256": "d585cb1fde186b36efdc069aaf4f641df644f3df93790f3cc28951ca601cff60"
+    },
+    {
+      "file": "VIII. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ, ВЫПОЛНЯЕМЫХ ПО ПЕРЕЧНЮ РАБОТ В ПОРЯДКЕ ТЕКУЩЕЙ ЭКСПЛУАТАЦИИ.md",
+      "moduleSlug": "08-ohrana-truda-pri-organizatsii-rabot-v-elektroustanovkah-vypolnyaemyh",
+      "questions": 19,
+      "sha256": "7d297c657f5422b51f9f553545e4810191d05e971d4bb6bce8b26c91e01762e1"
+    },
+    {
+      "file": "IX. ОХРАНА ТРУДА ПРИ ВЫДАЧЕ РАЗРЕШЕНИЙ НА ПОДГОТОВКУ РАБОЧЕГО МЕСТА И ДОПУСК К РАБОТЕ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "09-ohrana-truda-pri-vydache-razresheniy-na-podgotovku-rabochego-mesta-i",
+      "questions": 6,
+      "sha256": "474aea1d02561cb69e988bce8109ae12688fb2acdefc64aaa5d7b4991da77a2d"
+    },
+    {
+      "file": "X. ОХРАНА ТРУДА ПРИ ПОДГОТОВКЕ РАБОЧЕГО МЕСТА И ПЕРВИЧНОМ ДОПУСКЕ БРИГАДЫ К РАБОТЕ В ЭЛЕКТРОУСТАНОВКАХ ПО НАРЯДУ-ДОПУСКУ И РАСПОРЯЖЕНИЮ.md",
+      "moduleSlug": "10-ohrana-truda-pri-podgotovke-rabochego-mesta-i-pervichnom-dopuske-bri",
+      "questions": 30,
+      "sha256": "c7c85521f340d863ecfca0b342fdebf0c8d6cda61cf7f9d58719ad2ac894a46b"
+    },
+    {
+      "file": "XI. НАДЗОР ЗА БРИГАДОЙ. ИЗМЕНЕНИЯ СОСТАВА БРИГАДЫ ПРИ ПРОВЕДЕНИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "11-nadzor-za-brigadoy-izmeneniya-sostava-brigady-pri-provedenii-rabot-v",
+      "questions": 21,
+      "sha256": "04912490a867c2e46e40f0250045bab0e3bdbb7c44fd49cc63b15ef7e947563a"
+    },
+    {
+      "file": "XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО.md",
+      "moduleSlug": "12-perevod-na-drugoe-rabochee-mesto",
+      "questions": 8,
+      "sha256": "2c94f4465728d31c4e51098e9163535db5959adeeb45ad806904b85855c827ee"
+    },
+    {
+      "file": "XIII. ОФОРМЛЕНИЕ ПЕРЕРЫВОВ В РАБОТЕ И ПОВТОРНЫХ ДОПУСКОВ К РАБОТЕ В ЭЛЕКТРОУСТАНОВКЕ.md",
+      "moduleSlug": "13-oformlenie-pereryvov-v-rabote-i-povtornyh-dopuskov-k-rabote-v-elektr",
+      "questions": 18,
+      "sha256": "70f655d7ce6b40a888bad4f93594d7e1df1810db1c0412f17350317c5016a80b"
+    },
+    {
+      "file": "XIV. СДАЧА-ПРИЕМКА РАБОЧЕГО МЕСТА, ЗАКРЫТИЕ НАРЯДА-ДОПУСКА, РАСПОРЯЖЕНИЯ ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "14-sdacha-priemka-rabochego-mesta-zakrytie-naryada-dopuska-rasporyazhen",
+      "questions": 10,
+      "sha256": "ca8484593e5fcb1f8a79a4d46b47df477243596859f7d8632ababedd7471eb9d"
+    },
+    {
+      "file": "XV. ОХРАНА ТРУДА ПРИ ВКЛЮЧЕНИИ ЭЛЕКТРОУСТАНОВОК ПОСЛЕ ПОЛНОГО ОКОНЧАНИЯ РАБОТ.md",
+      "moduleSlug": "15-ohrana-truda-pri-vklyuchenii-elektroustanovok-posle-polnogo-okonchan",
+      "questions": 9,
+      "sha256": "68117dfb8bb7240c498703977ce58563d3c3ffd1a333df16f3bc7686cace2984"
+    },
+    {
+      "file": "XVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ТЕХНИЧЕСКИХ МЕРОПРИЯТИЙ, ОБЕСПЕЧИВАЮЩИХ БЕЗОПАСНОСТЬ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "16-ohrana-truda-pri-vypolnenii-tehnicheskih-meropriyatiy-obespechivayus",
+      "questions": 20,
+      "sha256": "fb8d959f5fe50f6178d37c61815d8203094d9c8437a4464b757d59499e518149"
+    },
+    {
+      "file": "XVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ ОТКЛЮЧЕНИЙ В ЭЛЕКТРОУСТАНОВКАХ.md",
+      "moduleSlug": "17-ohrana-truda-pri-vypolnenii-otklyucheniy-v-elektroustanovkah",
+      "questions": 27,
+      "sha256": "25e3202b5b4dd8e909cde8a4aa8eb7784238a2f9e9eb982b289e913368cd0ef5"
+    },
+    {
+      "file": "XVIII. ВЫВЕШИВАНИЕ ЗАПРЕЩАЮЩИХ ПЛАКАТОВ.md",
+      "moduleSlug": "18-vyveshivanie-zapreschayuschih-plakatov",
+      "questions": 19,
+      "sha256": "670b4d2fb71430975d32f16cdf004fbd068c53f9833e11eb30c6d797ca3a8ee5"
+    },
+    {
+      "file": "XIX. ОХРАНА ТРУДА ПРИ ПРОВЕРКЕ ОТСУТСТВИЯ НАПРЯЖЕНИЯ.md",
+      "moduleSlug": "19-ohrana-truda-pri-proverke-otsutstviya-napryazheniya",
+      "questions": 22,
+      "sha256": "438460adef370c8b3a04201b0fcefda316e1154d7ef99d008d9402ecbbdf9e0a"
+    },
+    {
+      "file": "XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ.md",
+      "moduleSlug": "20-ohrana-truda-pri-ustanovke-zazemleniy",
+      "questions": 9,
+      "sha256": "ed9ae403b5e93b4be01a44c83447fd78aa470d9960306a81b4cb963b43ed268c"
+    },
+    {
+      "file": "XXI. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ В РАСПРЕДЕЛИТЕЛЬНЫХ УСТРОЙСТВАХ.md",
+      "moduleSlug": "21-ohrana-truda-pri-ustanovke-zazemleniy-v-raspredelitelnyh-ustroystvah",
+      "questions": 20,
+      "sha256": "f4f74334692f90261b194187973a488c7fdb55a5cd6c51f92f03c2786d121072"
+    },
+    {
+      "file": "XXII. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ НА ВЛ.md",
+      "moduleSlug": "22-ohrana-truda-pri-ustanovke-zazemleniy-na-vl",
+      "questions": 30,
+      "sha256": "556e1e1703d07d5aaeb02485344f5d175920cc75440b091c7660fdde91730fb7"
+    },
+    {
+      "file": "XXIII. ОГРАЖДЕНИЕ РАБОЧЕГО МЕСТА, ВЫВЕШИВАНИЕ ПЛАКАТОВ БЕЗОПАСНОСТИ.md",
+      "moduleSlug": "23-ograzhdenie-rabochego-mesta-vyveshivanie-plakatov-bezopasnosti",
+      "questions": 25,
+      "sha256": "bd3c532829498cf4e75918602af39154edb521c7adedc8e8fd0b4a1ae5eff389"
+    },
+    {
+      "file": "XXIV. ОХРАНА ТРУДА ПРИ РАБОТАХ В ЗОНЕ ВЛИЯНИЯ ЭЛЕКТРИЧЕСКОГО И МАГНИТНОГО ПОЛЕЙ.md",
+      "moduleSlug": "24-ohrana-truda-pri-rabotah-v-zone-vliyaniya-elektricheskogo-i-magnitno",
+      "questions": 46,
+      "sha256": "e50477241e9ceab712fa7bfea6f2b1c10798952fe082c8401c7930bf1ab41559"
+    },
+    {
+      "file": "XXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ГЕНЕРАТОРАХ И СИНХРОННЫХ КОМПЕНСАТОРАХ.md",
+      "moduleSlug": "25-ohrana-truda-pri-vypolnenii-rabot-na-generatorah-i-sinhronnyh-kompen",
+      "questions": 19,
+      "sha256": "4c7ded597ef2378296e00f6950c82a3b7994f8fc5508c0c67e859fd5189b6c56"
+    },
+    {
+      "file": "XXVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРОЛИЗНЫХ УСТАНОВКАХ.md",
+      "moduleSlug": "26-ohrana-truda-pri-vypolnenii-rabot-v-elektroliznyh-ustanovkah",
+      "questions": 49,
+      "sha256": "499f4b9f862b116e0f57cd65af0d21e32fa3ec88086434db9ad5afe563d62308"
+    },
+    {
+      "file": "XXVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ЭЛЕКТРОДВИГАТЕЛЯХ.md",
+      "moduleSlug": "27-ohrana-truda-pri-vypolnenii-rabot-na-elektrodvigatelyah",
+      "questions": 33,
+      "sha256": "8ddd2f3fb7be10e96c491450e5ad7bc12322bf47026e1ccba9b98a6dd7d7319f"
+    },
+    {
+      "file": "XXVIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КОММУТАЦИОННЫХ АППАРАТАХ.md",
+      "moduleSlug": "28-ohrana-truda-pri-vypolnenii-rabot-na-kommutatsionnyh-apparatah",
+      "questions": 26,
+      "sha256": "dec33dd2d4491a3fed81a766f81dfdaeb02a21662dc076f84b7b972a07f1c8f3"
+    },
+    {
+      "file": "XXIX. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В КОМПЛЕКТНЫХ РАСПРЕДЕЛИТЕЛЬНЫХ УСТРОЙСТВАХ.md",
+      "moduleSlug": "29-ohrana-truda-pri-vypolnenii-rabot-v-komplektnyh-raspredelitelnyh-ust",
+      "questions": 15,
+      "sha256": "1618ed354e086c0a2ca2552767646f606c4077c9f997979b46827de86a5fadcc"
+    },
+    {
+      "file": "XXX. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА МАЧТОВЫХ (СТОЛБОВЫХ) ТРАНСФОРМАТОРНЫХ ПОДСТАНЦИЯХ И КОМПЛЕКТНЫХ ТРАНСФОРМАТОРНЫХ ПОДСТАНЦИЯХ.md",
+      "moduleSlug": "30-ohrana-truda-pri-vypolnenii-rabot-na-machtovyh-stolbovyh-transformat",
+      "questions": 12,
+      "sha256": "71484e1968cd4c9f1da37dcf95db0d409e57922ef8b3135897a3222a68d63997"
+    },
+    {
+      "file": "XXXI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА СИЛОВЫХ ТРАНСФОРМАТОРАХ, МАСЛЯНЫХ ШУНТИРУЮЩИХ И ДУГОГАСЯЩИХ РЕАКТОРАХ.md",
+      "moduleSlug": "31-ohrana-truda-pri-vypolnenii-rabot-na-silovyh-transformatorah-maslyan",
+      "questions": 23,
+      "sha256": "e6633df1364354113e92a449b9db70f1117309d73ce5c8ce3fb600bc9c6fcf02"
+    },
+    {
+      "file": "XXXII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ИЗМЕРИТЕЛЬНЫХ ТРАНСФОРМАТОРАХ ТОКА.md",
+      "moduleSlug": "32-ohrana-truda-pri-vypolnenii-rabot-na-izmeritelnyh-transformatorah-to",
+      "questions": 8,
+      "sha256": "f49d414590791e2b78f6fc62cbee002cf6152ffa707b85a2087e2153531151e0"
+    },
+    {
+      "file": "XXXIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ЭЛЕКТРИЧЕСКИХ КОТЛАХ.md",
+      "moduleSlug": "33-ohrana-truda-pri-vypolnenii-rabot-na-elektricheskih-kotlah",
+      "questions": 9,
+      "sha256": "86d258ee499ec0f15556473ea6dbafc3bc1a017429d107bef7ef8ceaaa293e8c"
+    },
+    {
+      "file": "XXXIV. ОХРАНА ТРУДА ПРИ РАБОТАХ НА ЭЛЕКТРОФИЛЬТРАХ.md",
+      "moduleSlug": "34-ohrana-truda-pri-rabotah-na-elektrofiltrah",
+      "questions": 13,
+      "sha256": "6f182659d765a22b917d80d8af5a856ce029b591d064c536810137e17e4c7588"
+    },
+    {
+      "file": "XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ.md",
+      "moduleSlug": "35-ohrana-truda-pri-vypolnenii-rabot-s-akkumulyatornymi-batareyami",
+      "questions": 36,
+      "sha256": "490b7c4d7c249498f646bd86d2615e36f0f6906b19b9478ef2d002588d788821"
+    },
+    {
+      "file": "XXXVI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КОНДЕНСАТОРНЫХ УСТАНОВКАХ.md",
+      "moduleSlug": "36-ohrana-truda-pri-vypolnenii-rabot-na-kondensatornyh-ustanovkah",
+      "questions": 13,
+      "sha256": "969aff2fa14b3783293589c4b90246f70639c02c14f3e7aba01bc1ecd8765ba3"
+    },
+    {
+      "file": "XXXVII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА КАБЕЛЬНЫХ ЛИНИЯХ.md",
+      "moduleSlug": "37-ohrana-truda-pri-vypolnenii-rabot-na-kabelnyh-liniyah",
+      "questions": 126,
+      "sha256": "b3ac39e48537b2ca1f30a8b4879fb50b3dea2c818503517cd461f44d123b8256"
+    },
+    {
+      "file": "XXXVIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ НА ВОЗДУШНЫХ ЛИНИЯХ ЭЛЕКТРОПЕРЕДАЧИ.md",
+      "moduleSlug": "38-ohrana-truda-pri-vypolnenii-rabot-na-vozdushnyh-liniyah-elektropered",
+      "questions": 173,
+      "sha256": "317a4688245d8f85635e61c5554999979be61bfcb71bc14772101afc1df0a237"
+    },
+    {
+      "file": "XXXIX. ОХРАНА ТРУДА ПРИ ПРОВЕДЕНИИ ИСПЫТАНИЙ И ИЗМЕРЕНИЙ. ИСПЫТАНИЯ ЭЛЕКТРООБОРУДОВАНИЯ С ПОДАЧЕЙ ПОВЫШЕННОГО НАПРЯЖЕНИЯ ОТ ПОСТОРОННЕГО ИСТОЧНИКА.md",
+      "moduleSlug": "39-ohrana-truda-pri-provedenii-ispytaniy-i-izmereniy-ispytaniya-elektro",
+      "questions": 86,
+      "sha256": "2bdb745ef4fb800953ee7ae58f1c3b723841e827fbc70d067a4a6f5be89b9321"
+    },
+    {
+      "file": "XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ.md",
+      "moduleSlug": "40-ohrana-truda-pri-obmyve-i-chistke-izolyatorov-pod-napryazheniem",
+      "questions": 25,
+      "sha256": "b261a391e898100e92f8be37f32876dc46ac6b2ff89eea9dddf2dc6061140ad7"
+    },
+    {
+      "file": "XLI. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ СО СРЕДСТВАМИ СВЯЗИ, ДИСПЕТЧЕРСКОГО И ТЕХНОЛОГИЧЕСКОГО УПРАВЛЕНИЯ.md",
+      "moduleSlug": "41-ohrana-truda-pri-vypolnenii-rabot-so-sredstvami-svyazi-dispetchersko",
+      "questions": 105,
+      "sha256": "86173b7effcd051dae342b0ae99e1214eacef7846890993e632933fa46999b2e"
+    },
+    {
+      "file": "XLII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В УСТРОЙСТВАХ РЕЛЕЙНОЙ ЗАЩИТЫ И ЭЛЕКТРОАВТОМАТИКИ, СО СРЕДСТВАМИ ИЗМЕРЕНИЙ И ПРИБОРАМИ УЧЕТА ЭЛЕКТРОЭНЕРГИИ, ВТОРИЧНЫМИ ЦЕПЯМИ.md",
+      "moduleSlug": "42-ohrana-truda-pri-vypolnenii-rabot-v-ustroystvah-releynoy-zaschity-i",
+      "questions": 26,
+      "sha256": "d39d0a24911fe2da02b34f5bf86cea7ad96fb4a4e4e59d8c65e0190ed8ee6ad5"
+    },
+    {
+      "file": "XLIII. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРИЧЕСКОЙ ЧАСТИ УСТРОЙСТВ ТЕПЛОВОЙ АВТОМАТИКИ, ТЕПЛОТЕХНИЧЕСКИХ ИЗМЕРЕНИЙ И ЗАЩИТ.md",
+      "moduleSlug": "43-ohrana-truda-pri-vypolnenii-rabot-v-elektricheskoy-chasti-ustroystv",
+      "questions": 24,
+      "sha256": "9584f15bfb71379446a03defaabfb0f196177f4fb680bb29bcf7801bd4db3bf2"
+    },
+    {
+      "file": "XLIV. ОХРАНА ТРУДА ПРИ РАБОТЕ С ПЕРЕНОСНЫМ ЭЛЕКТРОИНСТРУМЕНТОМ И СВЕТИЛЬНИКАМИ, РУЧНЫМИ ЭЛЕКТРИЧЕСКИМИ МАШИНАМИ, РАЗДЕЛИТЕЛЬНЫМИ ТРАНСФОРМАТОРАМИ.md",
+      "moduleSlug": "44-ohrana-truda-pri-rabote-s-perenosnym-elektroinstrumentom-i-svetilnik",
+      "questions": 55,
+      "sha256": "aa82ca077403f23409d6187b038eb26dda6a6be81868c83f070f63044de17f9d"
+    },
+    {
+      "file": "XLV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ В ЭЛЕКТРОУСТАНОВКАХ С ПРИМЕНЕНИЕМ АВТОМОБИЛЕЙ, ПОДЪЕМНЫХ СООРУЖЕНИЙ И МЕХАНИЗМОВ, ЛЕСТНИЦ.md",
+      "moduleSlug": "45-ohrana-truda-pri-vypolnenii-rabot-v-elektroustanovkah-s-primeneniem",
+      "questions": 46,
+      "sha256": "5a7b669a710b6464745ddaba9417123dd5caaa34d595b38a6cc6bf88124db3fc"
+    },
+    {
+      "file": "XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА.md",
+      "moduleSlug": "46-ohrana-truda-pri-organizatsii-rabot-komandirovannogo-personala",
+      "questions": 33,
+      "sha256": "9f4111972744a5c982a5f63a7dc23d6d71be94f7c31561a7b5bd956b93af668d"
+    },
+    {
+      "file": "XLVII. ОХРАНА ТРУДА ПРИ ДОПУСКЕ ПЕРСОНАЛА СТРОИТЕЛЬНО-МОНТАЖНЫХ ОРГАНИЗАЦИЙ К РАБОТАМ В ДЕЙСТВУЮЩИХ ЭЛЕКТРОУСТАНОВКАХ И В ОХРАННОЙ ЗОНЕ ЛИНИЙ ЭЛЕКТРОПЕРЕДАЧИ.md",
+      "moduleSlug": "47-ohrana-truda-pri-dopuske-personala-stroitelno-montazhnyh-organizatsi",
+      "questions": 61,
+      "sha256": "15b9fc50a745015a76c40ac3272771aaa587e4b0bdc99d3dfe065d0cedfedcb3"
+    }
+  ]
+}

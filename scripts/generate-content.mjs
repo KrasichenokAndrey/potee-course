@@ -369,6 +369,8 @@ function quizFor(entry) {
 }
 
 function writeQuiz(entry) {
+  // Existing quizzes are maintained by import:tests or edited locally.
+  if (fs.existsSync(path.join(modulesDir, entry.slug, "quiz.yaml"))) return;
   const quiz = quizFor(entry);
   const questions = quiz.questions
     .map(

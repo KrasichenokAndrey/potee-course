@@ -41,10 +41,13 @@ const modules = await getCourseModules();
 </BaseLayout>
 
 <script>
+  import { quizResultsKey } from "../lib/quiz-storage";
+
   function refreshProgressPage() {
     let results = {};
     try {
-      results = JSON.parse(localStorage.getItem("potee:quiz-results:v1") || "{}");
+      results = JSON.parse(localStorage.getItem(quizResultsKey) || "{}");
+      if (!results || typeof results !== "object" || Array.isArray(results)) results = {};
     } catch {
       results = {};
     }

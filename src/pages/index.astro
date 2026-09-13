@@ -57,9 +57,11 @@ const appendixModules = modules.filter((module) => module.data.kind === "appendi
 </BaseLayout>
 
 <script>
+  import { quizResultsKey } from "../lib/quiz-storage";
+
   function refreshCompletedCount() {
     try {
-      const results = JSON.parse(localStorage.getItem("potee:quiz-results:v1") || "{}");
+      const results = JSON.parse(localStorage.getItem(quizResultsKey) || "{}");
       const completed = Object.values(results).filter((result) => result?.passed).length;
       document.querySelectorAll("[data-completed-count]").forEach((node) => {
         node.textContent = String(completed);

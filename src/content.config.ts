@@ -25,22 +25,25 @@ const presentations = defineCollection({
 const quizzes = defineCollection({
   loader: glob({ base: "./src/content/modules", pattern: "**/quiz.yaml" }),
   schema: z.object({
-    title: z.string(),
-    moduleSlug: z.string(),
+    title: z.string().trim().min(1),
+    moduleSlug: z.string().trim().min(1),
     draft: z.boolean().default(false),
     questions: z
       .array(
         z.object({
           type: z.literal("single"),
-          text: z.string(),
-          options: z.array(z.string()).min(2),
+          text: z.string().min(1).refine((text) => text.trim().length > 0),
+          options: z.array(z.string().min(1).refine((text) => text.trim().length > 0)).min(2),
           answer: z.number().int().min(1),
-          explanation: z.string(),
+          explanation: z.string().optional(),
           source: z.string().optional()
+        }).strict().refine((question) => question.answer <= question.options.length, {
+          message: "answer must be within options (1-based)",
+          path: ["answer"]
         })
       )
-      .default([])
-  })
+      .min(1)
+  }).strict()
 });
 
 const stories = defineCollection({

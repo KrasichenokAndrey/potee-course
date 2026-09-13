@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/validate-content.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "generate:content": "node scripts/generate-content.mjs",
+    "import:tests": "node scripts/import-tests.mjs",
+    "test:import": "node --test scripts/import-tests.test.mjs",
     "validate:content": "node scripts/validate-content.mjs"
   },
   "dependencies": {
