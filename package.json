@@ -10,6 +10,8 @@
     "preview": "astro preview",
     "generate:content": "node scripts/generate-content.mjs",
     "import:tests": "node scripts/import-tests.mjs",
+    "import:presentations": "node scripts/import-presentations.mjs",
+    "validate:presentations": "node scripts/validate-presentations.mjs",
     "test:import": "node --test scripts/import-tests.test.mjs",
     "validate:content": "node scripts/validate-content.mjs"
   },

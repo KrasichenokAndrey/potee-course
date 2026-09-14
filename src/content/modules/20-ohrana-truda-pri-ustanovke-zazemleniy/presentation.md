@@ -1,24 +1,25 @@
 ---
 title: "Презентация: XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ"
 moduleSlug: "20-ohrana-truda-pri-ustanovke-zazemleniy"
-draft: true
+draft: false
 ---
 
-# XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ
+## Слайд 1
 
-## Слайд 1. Смысл раздела
+<img data-slide-src="/slides/section-20/slide-001.png" alt="Слайд 1. XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ" width="1600" height="900" loading="lazy" />
 
-- Замените этот шаблон структурой из NotebookLM или чата.
-- Сохраните ключевую мысль раздела.
-- Укажите пункты Правил, на которые опирается слайд.
+## Слайд 2
 
-## Слайд 2. Ключевые требования
+<img data-slide-src="/slides/section-20/slide-002.png" alt="Слайд 2. XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ" width="1600" height="900" loading="lazy" />
 
-| Тема | Что вынести на слайд | Источник |
-|---|---|---|
-| Требование | Краткая формулировка | Пункт |
+## Слайд 3
 
-## Слайд 3. Проверка понимания
+<img data-slide-src="/slides/section-20/slide-003.png" alt="Слайд 3. XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ" width="1600" height="900" loading="lazy" />
 
-- Добавьте учебный пример.
-- Завершите слайд одним вопросом для самопроверки.
+## Слайд 4
+
+<img data-slide-src="/slides/section-20/slide-004.png" alt="Слайд 4. XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ" width="1600" height="900" loading="lazy" />
+
+## Слайд 5
+
+<img data-slide-src="/slides/section-20/slide-005.png" alt="Слайд 5. XX. ОХРАНА ТРУДА ПРИ УСТАНОВКЕ ЗАЗЕМЛЕНИЙ" width="1600" height="900" loading="lazy" />

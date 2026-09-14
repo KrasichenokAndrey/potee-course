@@ -1,24 +1,41 @@
 ---
 title: "Презентация: XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ"
 moduleSlug: "35-ohrana-truda-pri-vypolnenii-rabot-s-akkumulyatornymi-batareyami"
-draft: true
+draft: false
 ---
 
-# XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ
+## Слайд 1
 
-## Слайд 1. Смысл раздела
+<img data-slide-src="/slides/section-35/slide-001.png" alt="Слайд 1. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
 
-- Замените этот шаблон структурой из NotebookLM или чата.
-- Сохраните ключевую мысль раздела.
-- Укажите пункты Правил, на которые опирается слайд.
+## Слайд 2
 
-## Слайд 2. Ключевые требования
+<img data-slide-src="/slides/section-35/slide-002.png" alt="Слайд 2. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
 
-| Тема | Что вынести на слайд | Источник |
-|---|---|---|
-| Требование | Краткая формулировка | Пункт |
+## Слайд 3
 
-## Слайд 3. Проверка понимания
+<img data-slide-src="/slides/section-35/slide-003.png" alt="Слайд 3. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
 
-- Добавьте учебный пример.
-- Завершите слайд одним вопросом для самопроверки.
+## Слайд 4
+
+<img data-slide-src="/slides/section-35/slide-004.png" alt="Слайд 4. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
+
+## Слайд 5
+
+<img data-slide-src="/slides/section-35/slide-005.png" alt="Слайд 5. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
+
+## Слайд 6
+
+<img data-slide-src="/slides/section-35/slide-006.png" alt="Слайд 6. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
+
+## Слайд 7
+
+<img data-slide-src="/slides/section-35/slide-007.png" alt="Слайд 7. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
+
+## Слайд 8
+
+<img data-slide-src="/slides/section-35/slide-008.png" alt="Слайд 8. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />
+
+## Слайд 9
+
+<img data-slide-src="/slides/section-35/slide-009.png" alt="Слайд 9. XXXV. ОХРАНА ТРУДА ПРИ ВЫПОЛНЕНИИ РАБОТ С АККУМУЛЯТОРНЫМИ БАТАРЕЯМИ" width="1376" height="768" loading="lazy" />

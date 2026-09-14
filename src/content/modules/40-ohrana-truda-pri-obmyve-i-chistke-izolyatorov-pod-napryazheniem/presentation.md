@@ -1,24 +1,37 @@
 ---
 title: "Презентация: XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ"
 moduleSlug: "40-ohrana-truda-pri-obmyve-i-chistke-izolyatorov-pod-napryazheniem"
-draft: true
+draft: false
 ---
 
-# XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ
+## Слайд 1
 
-## Слайд 1. Смысл раздела
+<img data-slide-src="/slides/section-40/slide-001.png" alt="Слайд 1. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
 
-- Замените этот шаблон структурой из NotebookLM или чата.
-- Сохраните ключевую мысль раздела.
-- Укажите пункты Правил, на которые опирается слайд.
+## Слайд 2
 
-## Слайд 2. Ключевые требования
+<img data-slide-src="/slides/section-40/slide-002.png" alt="Слайд 2. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
 
-| Тема | Что вынести на слайд | Источник |
-|---|---|---|
-| Требование | Краткая формулировка | Пункт |
+## Слайд 3
 
-## Слайд 3. Проверка понимания
+<img data-slide-src="/slides/section-40/slide-003.png" alt="Слайд 3. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
 
-- Добавьте учебный пример.
-- Завершите слайд одним вопросом для самопроверки.
+## Слайд 4
+
+<img data-slide-src="/slides/section-40/slide-004.png" alt="Слайд 4. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
+
+## Слайд 5
+
+<img data-slide-src="/slides/section-40/slide-005.png" alt="Слайд 5. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
+
+## Слайд 6
+
+<img data-slide-src="/slides/section-40/slide-006.png" alt="Слайд 6. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
+
+## Слайд 7
+
+<img data-slide-src="/slides/section-40/slide-007.png" alt="Слайд 7. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />
+
+## Слайд 8
+
+<img data-slide-src="/slides/section-40/slide-008.png" alt="Слайд 8. XL. ОХРАНА ТРУДА ПРИ ОБМЫВЕ И ЧИСТКЕ ИЗОЛЯТОРОВ ПОД НАПРЯЖЕНИЕМ" width="1600" height="900" loading="lazy" />

@@ -1,24 +1,41 @@
 ---
 title: "Презентация: XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА"
 moduleSlug: "46-ohrana-truda-pri-organizatsii-rabot-komandirovannogo-personala"
-draft: true
+draft: false
 ---
 
-# XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА
+## Слайд 1
 
-## Слайд 1. Смысл раздела
+<img data-slide-src="/slides/section-46/slide-001.png" alt="Слайд 1. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
 
-- Замените этот шаблон структурой из NotebookLM или чата.
-- Сохраните ключевую мысль раздела.
-- Укажите пункты Правил, на которые опирается слайд.
+## Слайд 2
 
-## Слайд 2. Ключевые требования
+<img data-slide-src="/slides/section-46/slide-002.png" alt="Слайд 2. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
 
-| Тема | Что вынести на слайд | Источник |
-|---|---|---|
-| Требование | Краткая формулировка | Пункт |
+## Слайд 3
 
-## Слайд 3. Проверка понимания
+<img data-slide-src="/slides/section-46/slide-003.png" alt="Слайд 3. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
 
-- Добавьте учебный пример.
-- Завершите слайд одним вопросом для самопроверки.
+## Слайд 4
+
+<img data-slide-src="/slides/section-46/slide-004.png" alt="Слайд 4. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
+
+## Слайд 5
+
+<img data-slide-src="/slides/section-46/slide-005.png" alt="Слайд 5. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
+
+## Слайд 6
+
+<img data-slide-src="/slides/section-46/slide-006.png" alt="Слайд 6. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
+
+## Слайд 7
+
+<img data-slide-src="/slides/section-46/slide-007.png" alt="Слайд 7. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
+
+## Слайд 8
+
+<img data-slide-src="/slides/section-46/slide-008.png" alt="Слайд 8. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />
+
+## Слайд 9
+
+<img data-slide-src="/slides/section-46/slide-009.png" alt="Слайд 9. XLVI. ОХРАНА ТРУДА ПРИ ОРГАНИЗАЦИИ РАБОТ КОМАНДИРОВАННОГО ПЕРСОНАЛА" width="1376" height="768" loading="lazy" />

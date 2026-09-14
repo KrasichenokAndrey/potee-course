@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
 import { validateQuiz, checkImportedTests } from "./lib/tests.mjs";
+import { validatePresentations } from "./lib/presentations.mjs";
 
 const root = process.cwd();
 const modulesDir = path.join(root, "src", "content", "modules");
@@ -51,6 +52,7 @@ for (const dir of moduleDirs) {
 }
 
 errors.push(...checkImportedTests(root));
+errors.push(...validatePresentations(root));
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));

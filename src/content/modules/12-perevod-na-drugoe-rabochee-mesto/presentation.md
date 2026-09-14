@@ -1,24 +1,25 @@
 ---
 title: "Презентация: XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО"
 moduleSlug: "12-perevod-na-drugoe-rabochee-mesto"
-draft: true
+draft: false
 ---
 
-# XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО
+## Слайд 1
 
-## Слайд 1. Смысл раздела
+<img data-slide-src="/slides/section-12/slide-001.png" alt="Слайд 1. XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО" width="1376" height="768" loading="lazy" />
 
-- Замените этот шаблон структурой из NotebookLM или чата.
-- Сохраните ключевую мысль раздела.
-- Укажите пункты Правил, на которые опирается слайд.
+## Слайд 2
 
-## Слайд 2. Ключевые требования
+<img data-slide-src="/slides/section-12/slide-002.png" alt="Слайд 2. XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО" width="1376" height="768" loading="lazy" />
 
-| Тема | Что вынести на слайд | Источник |
-|---|---|---|
-| Требование | Краткая формулировка | Пункт |
+## Слайд 3
 
-## Слайд 3. Проверка понимания
+<img data-slide-src="/slides/section-12/slide-003.png" alt="Слайд 3. XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО" width="1376" height="768" loading="lazy" />
 
-- Добавьте учебный пример.
-- Завершите слайд одним вопросом для самопроверки.
+## Слайд 4
+
+<img data-slide-src="/slides/section-12/slide-004.png" alt="Слайд 4. XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО" width="1376" height="768" loading="lazy" />
+
+## Слайд 5
+
+<img data-slide-src="/slides/section-12/slide-005.png" alt="Слайд 5. XII. ПЕРЕВОД НА ДРУГОЕ РАБОЧЕЕ МЕСТО" width="1376" height="768" loading="lazy" />
