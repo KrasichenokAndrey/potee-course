@@ -72,34 +72,34 @@ const StoryContent = renderedStory?.Content;
     </header>
 
     <div class="tabs tabs--primary" role="tablist" aria-label="Раздел курса">
-      <button type="button" role="tab" aria-selected="true" aria-controls="panel-materials" data-main-tab="materials">
+      <button id="tab-materials" type="button" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-materials" data-main-tab="materials">
         Материалы
       </button>
-      <button type="button" role="tab" aria-selected="false" aria-controls="panel-testing" data-main-tab="testing">
+      <button id="tab-testing" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-testing" data-main-tab="testing">
         Тестирование
       </button>
     </div>
 
-    <section class="tab-panel" id="panel-materials" role="tabpanel" data-main-panel="materials">
+    <section class="tab-panel" id="panel-materials" role="tabpanel" aria-labelledby="tab-materials" tabindex="0" data-main-panel="materials">
       <div class="tabs tabs--nested" role="tablist" aria-label="Материалы раздела">
-        <button type="button" role="tab" aria-selected="true" aria-controls="panel-materials-rules" data-material-tab="materials-rules">
+        <button id="tab-materials-rules" type="button" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-materials-rules" data-material-tab="materials-rules">
           Правила
         </button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-simple" data-material-tab="materials-simple">
+        <button id="tab-materials-simple" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-materials-simple" data-material-tab="materials-simple">
           Простыми словами
         </button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-presentation" data-material-tab="materials-presentation">
+        <button id="tab-materials-presentation" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-materials-presentation" data-material-tab="materials-presentation">
           Презентация
         </button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-podcast" data-material-tab="materials-podcast">
+        <button id="tab-materials-podcast" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-materials-podcast" data-material-tab="materials-podcast">
           Подкаст
         </button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="panel-materials-story" data-material-tab="materials-story">
+        <button id="tab-materials-story" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-materials-story" data-material-tab="materials-story">
           Рассказ
         </button>
       </div>
 
-      <section class="nested-tab-panel" id="panel-materials-rules" role="tabpanel" data-material-panel="materials-rules">
+      <section class="nested-tab-panel" id="panel-materials-rules" role="tabpanel" aria-labelledby="tab-materials-rules" tabindex="0" data-material-panel="materials-rules">
         <div class="panel-actions">
           <button class="button button--secondary" type="button" data-mark-material>
             Отметить материал изученным
@@ -110,7 +110,7 @@ const StoryContent = renderedStory?.Content;
         </div>
       </section>
 
-      <section class="nested-tab-panel" id="panel-materials-simple" role="tabpanel" data-material-panel="materials-simple" hidden>
+      <section class="nested-tab-panel" id="panel-materials-simple" role="tabpanel" aria-labelledby="tab-materials-simple" tabindex="0" data-material-panel="materials-simple" hidden>
         {SimpleContent ? (
           <div class="prose prose--simple">
             <SimpleContent />
@@ -122,7 +122,7 @@ const StoryContent = renderedStory?.Content;
         )}
       </section>
 
-      <section class="nested-tab-panel" id="panel-materials-presentation" role="tabpanel" data-material-panel="materials-presentation" hidden>
+      <section class="nested-tab-panel" id="panel-materials-presentation" role="tabpanel" aria-labelledby="tab-materials-presentation" tabindex="0" data-material-panel="materials-presentation" hidden>
         {PresentationContent ? (
           <PresentationViewer slug={slug} draft={presentationEntry.data.draft}>
             <PresentationContent />
@@ -132,13 +132,13 @@ const StoryContent = renderedStory?.Content;
         )}
       </section>
 
-      <section class="nested-tab-panel" id="panel-materials-podcast" role="tabpanel" data-material-panel="materials-podcast" hidden>
+      <section class="nested-tab-panel" id="panel-materials-podcast" role="tabpanel" aria-labelledby="tab-materials-podcast" tabindex="0" data-material-panel="materials-podcast" hidden>
         <div class="empty-state">
           <p>Подкаст для этого раздела еще не добавлен.</p>
         </div>
       </section>
 
-      <section class="nested-tab-panel" id="panel-materials-story" role="tabpanel" data-material-panel="materials-story" hidden>
+      <section class="nested-tab-panel" id="panel-materials-story" role="tabpanel" aria-labelledby="tab-materials-story" tabindex="0" data-material-panel="materials-story" hidden>
         {StoryContent ? (
           <div class="prose prose--story">
             <StoryContent />
@@ -151,7 +151,7 @@ const StoryContent = renderedStory?.Content;
       </section>
     </section>
 
-    <section class="tab-panel" id="panel-testing" role="tabpanel" data-main-panel="testing" hidden>
+    <section class="tab-panel" id="panel-testing" role="tabpanel" aria-labelledby="tab-testing" tabindex="0" data-main-panel="testing" hidden>
       {quizEntry ? <Quiz slug={slug} quiz={quizEntry.data} /> : <p class="notice">Тест еще не добавлен.</p>}
     </section>
 
@@ -197,6 +197,7 @@ const StoryContent = renderedStory?.Content;
       mainTabs.forEach((tab) => {
         const selected = tab.dataset.mainTab === tabName;
         tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
       });
       mainPanels.forEach((panel) => {
         panel.hidden = panel.dataset.mainPanel !== tabName;
@@ -207,6 +208,7 @@ const StoryContent = renderedStory?.Content;
       materialTabs.forEach((tab) => {
         const selected = tab.dataset.materialTab === tabName;
         tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
       });
       materialPanels.forEach((panel) => {
         panel.hidden = panel.dataset.materialPanel !== tabName;
@@ -244,6 +246,25 @@ const StoryContent = renderedStory?.Content;
 
     materialTabs.forEach((tab) => {
       tab.addEventListener("click", () => activate(tab.dataset.materialTab));
+    });
+
+    // Each tablist is one Tab stop; arrows/Home/End select and focus its tabs.
+    [mainTabs, materialTabs].forEach((tabs) => {
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("keydown", (event) => {
+          if (event.ctrlKey || event.metaKey || event.altKey) return;
+          const next = {
+            ArrowLeft: (index - 1 + tabs.length) % tabs.length,
+            ArrowRight: (index + 1) % tabs.length,
+            Home: 0,
+            End: tabs.length - 1
+          }[event.key];
+          if (next === undefined) return;
+          event.preventDefault();
+          tabs[next].click();
+          tabs[next].focus();
+        });
+      });
     });
 
     const initial = location.hash.replace("#", "");

@@ -1,26 +1,62 @@
 ---
+
 interface Props {
   slug: string;
   draft?: boolean;
 }
 
 const { slug, draft = false } = Astro.props;
+const id = `presentation-${slug}`;
 ---
 
-<section class="presentation-viewer" data-presentation-viewer data-slug={slug}>
+<section class="presentation-viewer" data-presentation-viewer data-slug={slug} aria-label="Презентация">
   <div class="presentation-toolbar" aria-label="Навигация по презентации">
     <button class="icon-button" type="button" data-slide-prev aria-label="Предыдущий слайд">‹</button>
-    <span class="slide-counter" data-slide-counter>1 / 1</span>
+    <span class="slide-counter" data-slide-counter role="status" aria-live="polite" aria-atomic="true">1 / 1</span>
     <button class="icon-button" type="button" data-slide-next aria-label="Следующий слайд">›</button>
+    <button class="button button--secondary" type="button" data-slide-open aria-haspopup="dialog" aria-controls={`${id}-dialog`}>На весь экран</button>
   </div>
   {draft && <p class="notice">Презентация в разработке</p>}
   <div class="presentation-stage" data-slide-stage></div>
+  <p class="presentation-help">Нажмите на слайд, чтобы увеличить. Для перелистывания используйте кнопки или клавиши ← и →.</p>
+
   <div class="presentation-source prose" data-presentation-source hidden>
     <slot />
   </div>
+  <dialog class="slide-dialog" id={`${id}-dialog`} data-slide-dialog aria-labelledby={`${id}-title`} aria-describedby={`${id}-help`}>
+    <div class="slide-dialog__layout">
+      <header class="slide-dialog__header">
+        <h2 id={`${id}-title`}>Просмотр презентации</h2>
+        <button class="button button--secondary" type="button" data-slide-close autofocus>Закрыть <span aria-hidden="true">×</span></button>
+      </header>
+      <div class="slide-dialog__toolbar">
+        <div class="slide-dialog__controls" aria-label="Навигация по слайдам">
+          <button class="icon-button" type="button" data-modal-prev aria-label="Предыдущий слайд">‹</button>
+          <span class="slide-counter" data-modal-counter role="status" aria-live="polite" aria-atomic="true"></span>
+          <button class="icon-button" type="button" data-modal-next aria-label="Следующий слайд">›</button>
+        </div>
+        <div class="slide-dialog__controls" data-zoom-controls aria-label="Масштаб слайда">
+          <button class="icon-button" type="button" data-zoom-out aria-label="Уменьшить слайд">−</button>
+          <span class="slide-counter" data-zoom-label role="status" aria-live="polite" aria-atomic="true">100%</span>
+          <button class="icon-button" type="button" data-zoom-in aria-label="Увеличить слайд">+</button>
+          <button class="button button--secondary" type="button" data-zoom-reset>По размеру окна</button>
+        </div>
+      </div>
+      <div class="slide-dialog__viewport" data-slide-viewport tabindex="0" role="region" aria-label="Слайд. При увеличении доступно перемещение" aria-describedby={`${id}-help`}>
+        <div class="slide-dialog__canvas" data-slide-canvas>
+          <img data-modal-image alt="" draggable="false" hidden />
+          <div class="prose slide-dialog__text-slide" data-modal-content hidden></div>
+        </div>
+      </div>
+      <p class="presentation-help" id={`${id}-help`}>← → — слайды, + и − — масштаб, 0 — по размеру окна, Esc — закрыть. Увеличенный слайд перемещается перетаскиванием или стрелками при фокусе на нём. На сенсорном экране используйте два пальца для увеличения.</p>
+
+    </div>
+  </dialog>
 </section>
 
 <script>
+  import { setupSlideDialog } from "../lib/slide-dialog";
+
   const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   function assetUrl(path) {
@@ -36,6 +72,7 @@ const { slug, draft = false } = Astro.props;
     const counter = viewer.querySelector("[data-slide-counter]");
     const prev = viewer.querySelector("[data-slide-prev]");
     const next = viewer.querySelector("[data-slide-next]");
+    const open = viewer.querySelector("[data-slide-open]");
     const children = Array.from(source.children);
     const groups = [];
     let current = [];
@@ -57,17 +94,32 @@ const { slug, draft = false } = Astro.props;
       slide.className = "presentation-slide prose";
       slide.dataset.slide = String(index);
       group.forEach((node) => slide.appendChild(node.cloneNode(true)));
+      // Cloned Markdown headings must not duplicate IDs in the document.
+      slide.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
       slide.querySelectorAll("img[data-slide-src]").forEach((image) => {
         image.src = assetUrl(image.dataset.slideSrc);
       });
       if (slide.querySelector("img")) {
         slide.classList.add("presentation-slide--image");
+        slide.querySelectorAll("img").forEach((image) => {
+          image.draggable = false;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "presentation-image-button";
+          button.setAttribute("aria-label", `Открыть слайд ${index + 1} на весь экран`);
+          button.setAttribute("aria-haspopup", "dialog");
+          button.setAttribute("aria-controls", open.getAttribute("aria-controls"));
+          image.replaceWith(button);
+          button.append(image);
+          button.addEventListener("click", () => dialog.open(button));
+        });
       }
       stage.appendChild(slide);
       return slide;
     });
 
     let active = 0;
+    const dialog = setupSlideDialog(viewer, () => active, show, slides);
 
     function show(index) {
       active = Math.max(0, Math.min(index, slides.length - 1));
@@ -75,15 +127,28 @@ const { slug, draft = false } = Astro.props;
         slide.hidden = slideIndex !== active;
       });
       counter.textContent = `${active + 1} / ${slides.length}`;
-      prev.disabled = active === 0;
-      next.disabled = active === slides.length - 1;
+      prev.setAttribute("aria-disabled", String(active === 0));
+      next.setAttribute("aria-disabled", String(active === slides.length - 1));
+      dialog.sync();
     }
 
+    // Keep normal page menus and text selection; only slide images are restricted.
+    viewer.addEventListener("contextmenu", (event) => {
+      if (event.target.closest(".presentation-image-button, [data-modal-image]")) event.preventDefault();
+    });
+    viewer.addEventListener("dragstart", (event) => {
+      if (event.target instanceof HTMLImageElement) event.preventDefault();
+    });
+    open.addEventListener("click", () => dialog.open(open));
     prev.addEventListener("click", () => show(active - 1));
     next.addEventListener("click", () => show(active + 1));
     viewer.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") show(active - 1);
-      if (event.key === "ArrowRight") show(active + 1);
+      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.target.closest("dialog, details")) return;
+      const index = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: slides.length - 1 }[event.key];
+      if (index !== undefined) {
+        event.preventDefault();
+        show(index);
+      }
     });
 
     show(0);
